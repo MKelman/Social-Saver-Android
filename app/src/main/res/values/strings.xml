@@ -9,5 +9,10 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="action_example">Example action</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_login_page">LoginPage</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_dispatch">DispatchActivity</string>
+    <string name="title_activity_sign_up_user">SignUpUser</string>
+    <string name="Logout_action">Logout</string>
 
 </resources>

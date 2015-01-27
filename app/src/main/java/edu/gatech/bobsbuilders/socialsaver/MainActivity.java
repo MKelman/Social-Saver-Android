@@ -1,22 +1,21 @@
 package edu.gatech.bobsbuilders.socialsaver;
 
 import android.app.Activity;
-import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.ActionBar;
+import android.content.Intent;
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.content.Context;
-import android.os.Build;
-import android.os.Bundle;
-import android.view.Gravity;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.ActionBarActivity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.support.v4.widget.DrawerLayout;
-import android.widget.ArrayAdapter;
-import android.widget.TextView;
+
+import com.parse.ParseInstallation;
+import com.parse.ParseUser;
 
 
 public class MainActivity extends ActionBarActivity
@@ -99,7 +98,16 @@ public class MainActivity extends ActionBarActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.Logoutid) {
+            Intent returntologin = new Intent(getBaseContext(), LoginPage.class);
+            ParseUser.logOut();
+            ParseInstallation installation = ParseInstallation.getCurrentInstallation();
+            installation.put("useremail", " ");
+            installation.saveInBackground();
+            returntologin.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(returntologin);
+            finish(); // this will not allow it to go back to previous person!
+
             return true;
         }
 

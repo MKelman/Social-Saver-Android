@@ -1,0 +1,78 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="edu.gatech.bobsbuilders.socialsaver.LoginPage"
+    android:id="@+id/rlayoutlogin">
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="140dp"
+        android:layout_marginTop="30dp"
+        android:gravity="center_horizontal"
+        android:padding="5dp"
+        android:src="@drawable/sslogo"
+        android:id="@+id/logo"/>
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:ems="10"
+        android:id="@+id/emailfield"
+        android:layout_below="@+id/logo"
+        android:layout_marginTop="10dp"
+        android:hint="Email Address"
+        android:layout_marginLeft="10dp"
+        />
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:id="@+id/passfield"
+        android:layout_below="@+id/emailfield"
+        android:hint="Password"
+        android:layout_marginLeft="10dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Forgot Password?"
+        android:id="@+id/forgotpassword"
+        android:layout_below="@+id/passfield"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+    <LinearLayout
+        android:id="@+id/LinearLayout02"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_below="@+id/forgotpassword">
+
+    <Button
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:id="@+id/login"
+        android:layout_below="@+id/textView2"
+        android:paddingRight="5dp"
+        android:layout_weight="1"/>
+
+    <Button
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:text="New User?"
+        android:id="@+id/newuser"
+        android:paddingLeft="5dp"
+        android:layout_alignTop="@+id/submitbutton"
+        android:layout_alignRight="@+id/logo"
+        android:layout_weight="1" />
+    </LinearLayout>
+
+</RelativeLayout>
