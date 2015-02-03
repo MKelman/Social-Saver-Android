@@ -92,6 +92,11 @@ public class LoginPage extends Activity {
         }
     }
 
+    /**
+     * Checks current network status before attempting to connect with parse
+     *
+     * @param  Context of Activity
+     */
     public static boolean isNetworkStatusAvialable (Context context) {
         ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
         if (connectivityManager != null)
@@ -104,6 +109,11 @@ public class LoginPage extends Activity {
         return false;
     }
 
+    /**
+     * Checks field inputted to see if field is empty
+     *
+     * @param  Edittext field to check
+     */
     private boolean isEmpty(EditText etText) {
         if (etText.getText().toString().trim().length() > 0) {
             return false;

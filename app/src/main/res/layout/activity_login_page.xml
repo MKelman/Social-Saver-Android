@@ -48,6 +48,7 @@
         android:layout_below="@+id/passfield"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
+
     <LinearLayout
         android:id="@+id/LinearLayout02"
         android:layout_width="fill_parent"
@@ -67,7 +68,7 @@
     <Button
         android:layout_width="40dp"
         android:layout_height="wrap_content"
-        android:text="New User?"
+        android:text="Register"
         android:id="@+id/newuser"
         android:paddingLeft="5dp"
         android:layout_alignTop="@+id/submitbutton"

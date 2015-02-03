@@ -27,6 +27,15 @@ public class SignUpUser extends Activity {
         password = (EditText)findViewById(R.id.password);
         passwordverify = (EditText)findViewById(R.id.confirmpassword);
 
+
+        findViewById(R.id.canceluserbutton).setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                Intent goBack = new Intent(SignUpUser.this,LoginPage.class);
+                finish();
+                startActivity(goBack);
+            }
+        });
+
         findViewById(R.id.submituserbutton).setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 if(isEmpty(name) || isEmpty(email) || isEmpty(password) || isEmpty(passwordverify)) {
@@ -79,6 +88,11 @@ public class SignUpUser extends Activity {
 
     }
 
+    /**
+     * Checks field inputted to see if field is empty
+     *
+     * @param  Edittext field to check
+     */
     private boolean isEmpty(EditText etText) {
         if (etText.getText().toString().trim().length() > 0) {
             return false;

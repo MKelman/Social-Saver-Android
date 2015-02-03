@@ -90,9 +90,21 @@
     <Button
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:text="Cancel"
+        android:id="@+id/canceluserbutton"
+        android:layout_below="@+id/confirmpassword"
+        android:layout_marginTop="30dp"
+        android:layout_alignRight="@+id/textView5"
+        android:layout_alignEnd="@+id/textView5" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="Submit"
         android:id="@+id/submituserbutton"
-        android:layout_below="@+id/confirmpassword"
-        android:layout_marginTop="30dp"/>
+        android:layout_alignTop="@+id/canceluserbutton"
+        android:layout_toRightOf="@+id/canceluserbutton"
+        android:layout_alignRight="@+id/confirmpassword"
+        android:layout_alignEnd="@+id/confirmpassword" />
 
 </RelativeLayout>
