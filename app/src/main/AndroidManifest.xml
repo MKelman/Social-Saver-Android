@@ -42,6 +42,10 @@
             android:name=".SignUpUser"
             android:label="@string/title_activity_sign_up_user" >
         </activity>
+        <activity
+            android:name=".SecondPage"
+            android:label="@string/title_activity_second_page" >
+        </activity>
     </application>
 
 </manifest>

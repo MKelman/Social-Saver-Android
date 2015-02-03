@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
@@ -19,7 +20,7 @@ import com.parse.ParseUser;
 
 
 public class MainActivity extends ActionBarActivity
-        implements NavigationDrawerFragment.NavigationDrawerCallbacks {
+        implements NavigationDrawerFragment.NavigationDrawerCallbacks, PageTwo.OnPageTwoSelectedListener {
 
     /**
      * Fragment managing the behaviors, interactions and presentation of the navigation drawer.
@@ -31,6 +32,11 @@ public class MainActivity extends ActionBarActivity
      */
     private CharSequence mTitle;
 
+    /*
+        final String[] fragments ={
+                "edu.gatech.bobsbuilders.socialsaver.PageTwo"
+                };
+    */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,11 +56,29 @@ public class MainActivity extends ActionBarActivity
     public void onNavigationDrawerItemSelected(int position) {
         // update the main content by replacing fragments
         FragmentManager fragmentManager = getSupportFragmentManager();
-        fragmentManager.beginTransaction()
-                .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
-                .commit();
-    }
+        Fragment fragment = null;
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
 
+            if (position == 2) {
+                ft.replace(R.id.container, Fragment.instantiate(MainActivity.this, "edu.gatech.bobsbuilders.socialsaver.PageTwo"));
+                ft.commit();
+/*
+                fragmentManager.beginTransaction()
+                        .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
+                        .commit();
+*/
+
+            }
+       // ft.replace(R.id.container, Fragment.instantiate(MainActivity.this, "edu.gatech.bobsbuilders.socialsaver.PageTwo"));
+        //ft.commit();
+
+}
+
+    /**
+     * Attaches fragment sections
+     *
+     * @param  number of nagigation bars
+     */
     public void onSectionAttached(int number) {
         switch (number) {
             case 1:
@@ -69,6 +93,11 @@ public class MainActivity extends ActionBarActivity
         }
     }
 
+    /**
+     * Restores the action bar after coming back from home screen of phone
+     *
+     * @param  None
+     */
     public void restoreActionBar() {
         ActionBar actionBar = getSupportActionBar();
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
@@ -136,6 +165,10 @@ public class MainActivity extends ActionBarActivity
             return fragment;
         }
 
+        /**
+         * Placeholder constructor
+         *
+         */
         public PlaceholderFragment() {
         }
 

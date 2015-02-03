@@ -19,7 +19,9 @@ public class DispatchActivity extends Activity {
             // Start an intent for the logged in activity
             ParseUser user = ParseUser.getCurrentUser();
             String isiton = user.get("isOn").toString();
-
+            /*
+            * DOES NOT WORK FOR NOW... FIGURE OUT ISSUE AT A LATER TIME
+            * */
             ParseInstallation installation = ParseInstallation.getCurrentInstallation();
             installation.put("useremail", ParseUser.getCurrentUser().getUsername());
             installation.put("isOn", isiton);
