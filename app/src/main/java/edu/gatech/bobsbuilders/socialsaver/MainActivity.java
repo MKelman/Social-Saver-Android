@@ -20,7 +20,7 @@ import com.parse.ParseUser;
 
 
 public class MainActivity extends ActionBarActivity
-        implements NavigationDrawerFragment.NavigationDrawerCallbacks, PageTwo.OnPageTwoSelectedListener {
+        implements NavigationDrawerFragment.NavigationDrawerCallbacks, PageTwo.OnPageTwoSelectedListener,HomeScreen.OnHomeScreenSelectedListener,Friends.OnFriendsSelectedListener {
 
     /**
      * Fragment managing the behaviors, interactions and presentation of the navigation drawer.
@@ -32,11 +32,6 @@ public class MainActivity extends ActionBarActivity
      */
     private CharSequence mTitle;
 
-    /*
-        final String[] fragments ={
-                "edu.gatech.bobsbuilders.socialsaver.PageTwo"
-                };
-    */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,19 +53,20 @@ public class MainActivity extends ActionBarActivity
         FragmentManager fragmentManager = getSupportFragmentManager();
         Fragment fragment = null;
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        if (position == 0) {
+            ft.replace(R.id.container, Fragment.instantiate(MainActivity.this, "edu.gatech.bobsbuilders.socialsaver.HomeScreen"));
+            ft.commit();
+        }
 
-            if (position == 2) {
-                ft.replace(R.id.container, Fragment.instantiate(MainActivity.this, "edu.gatech.bobsbuilders.socialsaver.PageTwo"));
-                ft.commit();
-/*
-                fragmentManager.beginTransaction()
-                        .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
-                        .commit();
-*/
+        if (position == 1) {
+            ft.replace(R.id.container, Fragment.instantiate(MainActivity.this, "edu.gatech.bobsbuilders.socialsaver.Friends"));
+            ft.commit();
+        }
 
-            }
-       // ft.replace(R.id.container, Fragment.instantiate(MainActivity.this, "edu.gatech.bobsbuilders.socialsaver.PageTwo"));
-        //ft.commit();
+        if (position == 2) {
+
+        }
+
 
 }
 
@@ -88,7 +84,13 @@ public class MainActivity extends ActionBarActivity
                 mTitle = getString(R.string.title_section2);
                 break;
             case 3:
-                mTitle = getString(R.string.title_section3);
+                mTitle =getString(R.string.title_section3);
+                break;
+            case 4:
+                mTitle =getString(R.string.title_section4);
+                break;
+            case 5:
+                mTitle =getString(R.string.title_section5);
                 break;
         }
     }

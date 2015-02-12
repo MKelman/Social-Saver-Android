@@ -2,9 +2,12 @@
 <resources>
 
     <string name="app_name">Social Saver</string>
-    <string name="title_section1">Section 1</string>
-    <string name="title_section2">Section 2</string>
-    <string name="title_section3">Section 3</string>
+    <string name="title_section1">Submit</string>
+    <string name="SS_name">Social Saver</string>
+    <string name="title_section2">Friends</string>
+    <string name="title_section3">Deals</string>
+    <string name="title_section4">Profile</string>
+    <string name="title_section5">Settings</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="action_example">Example action</string>
@@ -16,5 +19,11 @@
     <string name="Logout_action">Logout</string>
     <string name="title_activity_second_page">SecondPage</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_friends">Friends</string>
+    <string name="title_activity_find_friends">FindFriends</string>
+    <string name="title_activity_home_screen">HomeScreen</string>
+    <string name="title_activity_friends_list">FriendsList</string>
+    <string name="title_activity_friends_more_info">FriendsMoreInfo</string>
+    <string name="title_activity_friends_adapter">FriendsAdapter</string>
 
 </resources>

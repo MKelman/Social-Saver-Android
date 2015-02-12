@@ -2,16 +2,21 @@ package edu.gatech.bobsbuilders.socialsaver;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import com.parse.ParseException;
+import com.parse.ParseFile;
 import com.parse.ParseInstallation;
 import com.parse.ParseUser;
 import com.parse.SignUpCallback;
 
+import java.io.ByteArrayOutputStream;
 import java.util.Locale;
 
 
@@ -54,19 +59,39 @@ public class SignUpUser extends Activity {
                         user.setUsername(newuserinfo);
 
                         user.setPassword(password.getText().toString());
-                        user.put("name",name.getText().toString());
+                        user.put("name", name.getText().toString().toLowerCase());
                         user.put("isOn","true");
+                        user.put("reportCount","0");
+                        user.put("Rating","0.0");
+
+                        /*START Add generic image of user*/
+
+                        Drawable drawable = getResources().getDrawable(R.drawable.black200);
+                        Bitmap bitmap = (Bitmap) ((BitmapDrawable) drawable).getBitmap();
+                        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+                        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
+                        byte[] data = stream.toByteArray();
+                        ParseFile imagefile = new ParseFile("image.jpg", data);
+                        imagefile.saveInBackground();
+
+                        /*END Add generic image of user*/
+                        user.put("userImage",imagefile);
                         ParseInstallation installation = ParseInstallation.getCurrentInstallation();
                         installation.put("isOn","true");
                         installation.put("useremail", emailclearwhite);
-                        installation.saveInBackground();
-
+                        try {
+                            installation.save();
+                        } catch(Exception e) {
+                            Toast.makeText(SignUpUser.this,"Something went wrong. Please try again or check your internet connection.", Toast.LENGTH_LONG).show();
+                        }
                         user.signUpInBackground(new SignUpCallback() {
                             @Override
                             public void done(ParseException e) {
                                 if (e != null) {
                                     // Show the error message
+                                    e.getMessage();
                                     Toast.makeText(SignUpUser.this,"Something went wrong. Please try again or check your internet connection.", Toast.LENGTH_LONG).show();
+
                                 } else {
                                     // Start an intent for the dispatch activity
                                     Intent intent = new Intent(SignUpUser.this,MainActivity.class);

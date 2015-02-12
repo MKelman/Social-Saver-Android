@@ -30,9 +30,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".MainActivity"
-            android:label="Home" >
+        <activity android:name=".MainActivity" >
         </activity>
         <activity
             android:name=".DispatchActivity"
@@ -45,6 +43,30 @@
         <activity
             android:name=".SecondPage"
             android:label="@string/title_activity_second_page" >
+        </activity>
+        <activity
+            android:name=".Friends"
+            android:label="@string/title_activity_friends" >
+        </activity>
+        <activity
+            android:name=".FindFriends"
+            android:label="@string/title_activity_find_friends" >
+        </activity>
+        <activity
+            android:name=".HomeScreen"
+            android:label="@string/title_activity_home_screen" >
+        </activity>
+        <activity
+            android:name=".FriendsList"
+            android:label="Friends" >
+        </activity>
+        <activity
+            android:name=".FriendsMoreInfo"
+            android:label="Find Friends" >
+        </activity>
+        <activity
+            android:name=".FriendsAdapter"
+            android:label="@string/title_activity_friends_adapter" >
         </activity>
     </application>
 

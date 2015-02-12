@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <TextView
+        android:id="@+id/titlelabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name: " />
+
+    <TextView
+        android:id="@+id/nametitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/titlelabel" />
+
+    <TextView
+        android:id="@+id/userlabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/titlelabel"
+        android:text="Email: " />
+
+    <TextView
+        android:id="@+id/emailtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/nametitle"
+        android:layout_toRightOf="@+id/userlabel" />
+
+    <TextView
+        android:id="@+id/catagorylabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/userlabel"
+        android:text="Rating: " />
+
+    <TextView
+        android:id="@+id/ratingtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/emailtitle"
+        android:layout_toRightOf="@+id/catagorylabel" />
+
+    <TextView
+        android:id="@+id/pricelabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/catagorylabel"
+        android:text="Report Count: " />
+
+    <TextView
+        android:id="@+id/reporttitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ratingtitle"
+        android:layout_toRightOf="@+id/pricelabel" />
+
+    <ImageView
+        android:id="@+id/ivuserprofile"
+        android:src="@drawable/black200"
+        android:layout_width="?android:attr/listPreferredItemHeight"
+        android:layout_height="?android:attr/listPreferredItemHeight"
+		android:layout_alignTop="@id/titlelabel"
+		android:layout_alignBottom="@id/pricelabel"
+        android:layout_alignParentRight="true"
+        android:padding="5dp" />
+
+</RelativeLayout>
