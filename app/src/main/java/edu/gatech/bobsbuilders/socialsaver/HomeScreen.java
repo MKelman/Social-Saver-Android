@@ -37,7 +37,6 @@ public class HomeScreen extends Fragment {
      * @param param2 Parameter 2.
      * @return A new instance of fragment HomeScreen.
      */
-    // TODO: Rename and change types and number of parameters
     public static HomeScreen newInstance(String param1, String param2) {
         HomeScreen fragment = new HomeScreen();
         Bundle args = new Bundle();

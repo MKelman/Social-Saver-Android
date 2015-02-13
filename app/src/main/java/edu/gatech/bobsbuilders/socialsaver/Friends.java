@@ -110,7 +110,9 @@ public class Friends extends Fragment {
                 userName.setHint("Friend's Name");//optional
                 final EditText userEmail = new EditText(getActivity());
                 userEmail.setHint("Friend's Email");//optional
+
                 //in my example i use TYPE_CLASS_NUMBER for input only numbers
+
                 userName.setInputType(InputType.TYPE_TEXT_VARIATION_PERSON_NAME);
                 userEmail.setInputType(InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS);
 
@@ -127,6 +129,8 @@ public class Friends extends Fragment {
 
                         ParseQuery<ParseUser> query = ParseUser.getQuery();
                         //ParseQuery<ParseObject> query = ParseQuery.getQuery("User");
+                        String username = userEmail.getText().toString().toLowerCase();
+                        String name = userName.getText().toString().toLowerCase();
                         query.whereEqualTo("username", userEmail.getText().toString().toLowerCase());
                         query.whereEqualTo("name", userName.getText().toString().toLowerCase());
                         try {

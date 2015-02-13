@@ -86,25 +86,35 @@
         android:layout_below="@+id/textView5"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
-
-    <Button
+    <LinearLayout
+        android:id="@+id/LinearLayout02"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Cancel"
-        android:id="@+id/canceluserbutton"
-        android:layout_below="@+id/confirmpassword"
         android:layout_marginTop="30dp"
-        android:layout_alignRight="@+id/textView5"
-        android:layout_alignEnd="@+id/textView5" />
+        android:layout_below="@+id/confirmpassword">
+        <Button
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:text="Cancel"
+            android:id="@+id/canceluserbutton"
+            android:layout_below="@+id/confirmpassword"
+            android:layout_marginTop="30dp"
+            android:paddingRight="5dp"
+            android:layout_weight="1"
+            android:layout_marginRight="3px"
+            android:background="@drawable/custom_button"/>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Submit"
-        android:id="@+id/submituserbutton"
-        android:layout_alignTop="@+id/canceluserbutton"
-        android:layout_toRightOf="@+id/canceluserbutton"
-        android:layout_alignRight="@+id/confirmpassword"
-        android:layout_alignEnd="@+id/confirmpassword" />
+        <Button
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:text="Submit"
+            android:id="@+id/submituserbutton"
+            android:layout_marginTop="30dp"
+            android:paddingRight="5dp"
+            android:layout_weight="1"
+            android:layout_marginRight="3px"
+            android:background="@drawable/custom_button2"
+            />
+    </LinearLayout>
 
 </RelativeLayout>

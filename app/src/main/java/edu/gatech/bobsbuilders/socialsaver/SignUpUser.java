@@ -59,7 +59,8 @@ public class SignUpUser extends Activity {
                         user.setUsername(newuserinfo);
 
                         user.setPassword(password.getText().toString());
-                        user.put("name", name.getText().toString().toLowerCase());
+                        String nameNoWhite = name.getText().toString().toLowerCase();
+                        user.put("name", nameNoWhite.replaceAll("\\s+$", ""));
                         user.put("isOn","true");
                         user.put("reportCount","0");
                         user.put("Rating","0.0");
@@ -79,11 +80,13 @@ public class SignUpUser extends Activity {
                         ParseInstallation installation = ParseInstallation.getCurrentInstallation();
                         installation.put("isOn","true");
                         installation.put("useremail", emailclearwhite);
+
                         try {
                             installation.save();
                         } catch(Exception e) {
                             Toast.makeText(SignUpUser.this,"Something went wrong. Please try again or check your internet connection.", Toast.LENGTH_LONG).show();
                         }
+
                         user.signUpInBackground(new SignUpCallback() {
                             @Override
                             public void done(ParseException e) {

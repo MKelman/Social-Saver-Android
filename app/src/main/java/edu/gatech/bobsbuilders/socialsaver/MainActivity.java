@@ -20,7 +20,7 @@ import com.parse.ParseUser;
 
 
 public class MainActivity extends ActionBarActivity
-        implements NavigationDrawerFragment.NavigationDrawerCallbacks, PageTwo.OnPageTwoSelectedListener,HomeScreen.OnHomeScreenSelectedListener,Friends.OnFriendsSelectedListener {
+        implements NavigationDrawerFragment.NavigationDrawerCallbacks,HomeScreen.OnHomeScreenSelectedListener,Friends.OnFriendsSelectedListener {
 
     /**
      * Fragment managing the behaviors, interactions and presentation of the navigation drawer.

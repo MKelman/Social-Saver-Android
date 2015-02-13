@@ -25,6 +25,13 @@ public class FriendsAdapter extends BaseAdapter {
 
     }
 
+    /**
+     * FriendsAdapter constructor that is overloaded
+     *
+     * @param context the original class its coming from
+     * @param UserListingsList is the list of listings
+     * @return A new instance of fragment HomeScreen.
+     */
     public FriendsAdapter(Context context,List<UserListings> UserListingslist) { //this class wanted a void? weird
         this.context = context;
         this.UserListingslist = UserListingslist;

@@ -63,7 +63,9 @@
         android:id="@+id/login"
         android:layout_below="@+id/textView2"
         android:paddingRight="5dp"
-        android:layout_weight="1"/>
+        android:layout_weight="1"
+        android:layout_marginRight="3px"
+        android:background="@drawable/custom_button"/>
 
     <Button
         android:layout_width="40dp"
@@ -73,7 +75,10 @@
         android:paddingLeft="5dp"
         android:layout_alignTop="@+id/submitbutton"
         android:layout_alignRight="@+id/logo"
-        android:layout_weight="1" />
+        android:layout_weight="1"
+        android:layout_marginLeft="3px"
+        android:background="@drawable/custom_button2"
+        />
     </LinearLayout>
 
 </RelativeLayout>
