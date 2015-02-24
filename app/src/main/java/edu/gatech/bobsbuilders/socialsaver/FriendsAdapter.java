@@ -1,12 +1,18 @@
 package edu.gatech.bobsbuilders.socialsaver;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.parse.Parse;
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
+import com.parse.ParseUser;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,6 +26,7 @@ public class FriendsAdapter extends BaseAdapter {
     private List<UserListings> UserListingslist = null;
     private ArrayList<UserListings> arraylist;
     String userid,usermessage,totalrates, currentrate,objectid;
+    String reportcount, rating;
 
     public FriendsAdapter() {
 
@@ -41,6 +48,10 @@ public class FriendsAdapter extends BaseAdapter {
         imageLoader = new ImageLoader(context);
     }
 
+    /**
+     * view holder to instantiate new textviews
+     *
+     */
     public class ViewHolder {
         TextView name;
         TextView email;
@@ -64,6 +75,14 @@ public class FriendsAdapter extends BaseAdapter {
         return position;
     }
 
+    /**
+     * getView
+     *
+     * @param position the original class its coming from
+     * @param view is the list of listings
+     * @param parent is the list of listings
+     * @return A new view of fragment HomeScreen.
+     */
     public View getView(final int position, View view, ViewGroup parent) {
         final ViewHolder holder;
         if (view == null) {
@@ -92,27 +111,32 @@ public class FriendsAdapter extends BaseAdapter {
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View arg0) {
-                /*
+                //DEFIANTLY GET OBJECTID SO WE COULD REMOVE THAT FRIENDSHIP ON DELETE BUTTON!
+
                 // Send single item click data to SingleTutorView Class
-                Intent intent = new Intent(context, SingleTutorView.class);
+                Intent intent = new Intent(context, SingleFriendView.class);
                 // Pass all data name
                 intent.putExtra("NAME",
                         (UserListingslist.get(position).getName()));
-                intent.putExtra("CATAGORY",
-                        (UserListingslist.get(position).getCatagory()));
+                intent.putExtra("EMAIL",
+                        (UserListingslist.get(position).getEmail()));
                 // Pass all data title
-                intent.putExtra("TITLE",
-                        (UserListingslist.get(position).getTitle()));
+                intent.putExtra("CURRENTRATE",
+                        (UserListingslist.get(position).getCurrentRate()));
                 // Pass all data price
-                intent.putExtra("PRICE",
-                        (UserListingslist.get(position).getPrice()));
+                intent.putExtra("TOTALSALES",
+                        (UserListingslist.get(position).getTotalSales()));
+                // Pass all data price
+                intent.putExtra("USERIMAGE",
+                        (UserListingslist.get(position).getUserImage()));
 
                 intent.putExtra("OBJECTID",
-                        (UserListingslist.get(position).getId()));
+                        (UserListingslist.get(position).getObjectID()));
 
+                objectid = UserListingslist.get(position).getObjectID();
+                userid = UserListingslist.get(position).getEmail();
 
-                userid=UserListingslist.get(position).getUserId();
-
+                /*
                 List<ParseUser> ob = null;
                 ParseQuery<ParseUser> query = ParseUser.getQuery();
                 query.whereEqualTo("username", userid);
@@ -125,24 +149,14 @@ public class FriendsAdapter extends BaseAdapter {
                 for (ParseObject Userlist : ob) {
                     totalrates= Userlist.get("totalrates").toString();
                     currentrate=Userlist.get("rating").toString();
-                    usermessage=Userlist.get("userwords").toString();
-                    if(usermessage.equals("Click edit and tell your future tutors/students more about YOU! Don't forget to click the box by your name to add a photo of yourself")){
-                        usermessage="This user has not updated there description yet";
-                    }
                 }
 
-
-                intent.putExtra("EMAIL", userid);
-                intent.putExtra("USERWORDS",usermessage);
-                // Pass all data userimage
-                intent.putExtra("USERIMAGE",(UserListingslist.get(position).getUserImage()));
-
                 intent.putExtra("TOTALRATES",totalrates);
-
                 intent.putExtra("CURRENTRATE",currentrate);
+                 */
 
                 context.startActivity(intent);
-                */
+
             }
         });
         return view;

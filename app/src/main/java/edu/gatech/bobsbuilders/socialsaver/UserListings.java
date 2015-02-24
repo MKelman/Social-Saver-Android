@@ -1,13 +1,20 @@
 package edu.gatech.bobsbuilders.socialsaver;
 
-public class UserListings {
+public class UserListings implements Listings {
 	private String name;
 	private String userimage;
 	private String currentrate;
     private String email;
     private String totalSales;
-	
-	public String getName() {
+    private String objectID;
+
+    public String getObjectID() { return objectID; }
+
+    public void setObjectID(String objectID) {
+        this.objectID = objectID;
+    }
+
+    public String getName() {
 		return name;
 	}
 

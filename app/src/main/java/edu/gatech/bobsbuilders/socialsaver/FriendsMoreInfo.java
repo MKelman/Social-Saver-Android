@@ -117,6 +117,7 @@ public class FriendsMoreInfo extends ActionBarActivity {
                     UL.setCurrentRate(rating);
                     UL.setEmail(email);
                     UL.setName(name);
+                    UL.setObjectID((String)Userlist.getObjectId());
                     UL.setTotalSales(totalsales);
                     UL.setUserImage(image.getUrl());
                     userlistings.add(UL); // just one
@@ -148,6 +149,7 @@ public class FriendsMoreInfo extends ActionBarActivity {
                     UL.setCurrentRate(rating);
                     UL.setEmail(email);
                     UL.setName(name);
+                    UL.setObjectID((String)Userlist.getObjectId());
                     UL.setTotalSales(totalsales);
                     UL.setUserImage(image.getUrl());
                     userlistings.add(UL); // just one
@@ -166,7 +168,7 @@ public class FriendsMoreInfo extends ActionBarActivity {
 
             TextView sorry = (TextView)findViewById(R.id.tvdisplaysorry);
             if ((ob.size() + ob2.size()) == 0) {
-                sorry.setText("You dont have any past activities on your account yet. Start by finding a tutor or becoming one in seconds!");
+                sorry.setText("You do not have any current friends. Go back to the last page and add a friend!");
             } else {
                 sorry.setVisibility(View.INVISIBLE);
             }

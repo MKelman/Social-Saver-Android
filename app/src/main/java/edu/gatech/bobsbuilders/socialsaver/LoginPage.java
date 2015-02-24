@@ -16,6 +16,7 @@ import android.widget.Toast;
 import com.parse.LogInCallback;
 import com.parse.ParseException;
 import com.parse.ParseUser;
+import com.parse.RequestPasswordResetCallback;
 
 import java.util.Locale;
 
@@ -87,6 +88,41 @@ public class LoginPage extends Activity {
                     startActivity(intent);
                 }
             });
+
+            /*  FORGOT PASSWORD  */
+            findViewById(R.id.forgotpassword).setOnClickListener(new View.OnClickListener() {
+                public void onClick(View view) {
+                    if(isEmpty(username)){
+                        Toast.makeText(getApplicationContext(),"Please type in your email address used to initally sign up in the email field", Toast.LENGTH_LONG).show();
+                    }
+                    else{
+
+                        // Set up a progress dialog
+                        final ProgressDialog dlg = new ProgressDialog(LoginPage.this);
+                        dlg.setTitle("Please wait.");
+                        dlg.setMessage("Resetting Password ");
+                        dlg.show();
+                        String emailwhite=username.getText().toString().toLowerCase(Locale.getDefault());
+                        String email=emailwhite.replaceAll("\\s+", "");
+                        ParseUser.requestPasswordResetInBackground(email, new RequestPasswordResetCallback(){
+                            @Override
+                            public void done(ParseException e) {
+                                dlg.dismiss();
+                                if(e==null){
+                                    Toast.makeText(getApplicationContext(),"Nice! Check your email to reset your password. (check your junk folder just in case)", Toast.LENGTH_LONG).show();
+                                }
+                                else{
+                                    Toast.makeText(getApplicationContext(),"opps, we dont have an email like that in our database. Please check the email address again", Toast.LENGTH_LONG).show();
+                                }
+                            }
+                        });
+                    }
+                }
+            });
+            /*
+            * End forgot password
+            * */
+
 
 
         }

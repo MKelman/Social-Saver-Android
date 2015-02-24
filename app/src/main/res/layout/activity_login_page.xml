@@ -47,7 +47,10 @@
         android:id="@+id/forgotpassword"
         android:layout_below="@+id/passfield"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:clickable="true"
+        android:onClick="onClick"
+        />
 
     <LinearLayout
         android:id="@+id/LinearLayout02"

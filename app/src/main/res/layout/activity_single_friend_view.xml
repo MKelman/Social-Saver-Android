@@ -1,0 +1,114 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="edu.gatech.bobsbuilders.socialsaver.SingleFriendView">
+
+    <ImageView
+        android:layout_width="225px"
+        android:layout_height="300px"
+        android:id="@+id/personImage"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:background="#000000"
+        android:padding="1dp"
+        android:src="@drawable/black200"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Name: "
+        android:id="@+id/tvnameASFV"
+        android:layout_below="@+id/personImage"
+        android:layout_marginTop="15dp"
+        android:paddingLeft="15dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/tvnameASFVLOAD"
+        android:layout_below="@+id/personImage"
+        android:layout_marginTop="15dp"
+        android:layout_toRightOf="@id/tvnameASFV"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="email: "
+        android:id="@+id/tvemailASFV"
+        android:layout_below="@+id/tvnameASFV"
+        android:layout_marginTop="15dp"
+        android:paddingLeft="15dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/tvemailASFVLOAD"
+        android:layout_below="@+id/tvnameASFVLOAD"
+        android:layout_marginTop="15dp"
+        android:layout_toRightOf="@id/tvemailASFV"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Report Count: "
+        android:id="@+id/tvreportcountASFV"
+        android:layout_below="@+id/tvemailASFV"
+        android:layout_marginTop="15dp"
+        android:paddingLeft="15dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/tvreportcountASFVLOAD"
+        android:layout_below="@+id/tvemailASFVLOAD"
+        android:layout_marginTop="15dp"
+        android:layout_toRightOf="@id/tvreportcountASFV"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Rating: "
+        android:id="@+id/tvratingASFV"
+        android:layout_below="@+id/tvreportcountASFV"
+        android:layout_marginTop="15dp"
+        android:paddingLeft="15dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/tvratingASFVLOAD"
+        android:layout_below="@+id/tvreportcountASFV"
+        android:layout_marginTop="15dp"
+        android:layout_toRightOf="@id/tvratingASFV"
+        />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Remove Friend"
+        android:id="@+id/removeFriend"
+        android:layout_below="@+id/tvratingASFV"
+        android:layout_marginTop="73dp"
+        android:background="@drawable/custom_button2"
+
+        />
+
+</RelativeLayout>
