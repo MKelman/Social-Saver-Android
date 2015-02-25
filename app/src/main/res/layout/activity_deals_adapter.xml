@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent" >
+    android:layout_height="fill_parent"
+    android:id="@+id/dealsadap">
 
     <TextView
         android:id="@+id/titlelabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Name: " />
+        android:text="Item: " />
 
     <TextView
         android:id="@+id/itemWANTEDTVSET"
@@ -20,7 +21,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/titlelabel"
-        android:text="Email: " />
+        android:text="Price: $" />
 
     <TextView
         android:id="@+id/priceWANTEDTVSET"
@@ -34,7 +35,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/userlabel"
-        android:text="Rating: " />
+        android:text="Found: " />
 
     <TextView
         android:id="@+id/foundTVSET"
@@ -48,23 +49,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/catagorylabel"
-        android:text="Report Count: " />
+        android:text="Location: " />
 
     <TextView
-        android:id="@+id/reporttitle"
+        android:id="@+id/foundLocationTVSET"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/foundTVSET"
         android:layout_toRightOf="@+id/pricelabel" />
-
-    <ImageView
-        android:id="@+id/ivuserprofile"
-        android:src="@drawable/black200"
-        android:layout_width="?android:attr/listPreferredItemHeight"
-        android:layout_height="?android:attr/listPreferredItemHeight"
-		android:layout_alignTop="@id/titlelabel"
-		android:layout_alignBottom="@id/pricelabel"
-        android:layout_alignParentRight="true"
-        android:padding="5dp" />
 
 </RelativeLayout>

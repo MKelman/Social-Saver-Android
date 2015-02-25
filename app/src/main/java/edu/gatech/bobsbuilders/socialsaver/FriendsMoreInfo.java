@@ -35,7 +35,6 @@ public class FriendsMoreInfo extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_friends_list);
-        //getActionBar().setDisplayHomeAsUpEnabled(true); // back button in action bar
 
         new RemoteDataTask().execute();
 

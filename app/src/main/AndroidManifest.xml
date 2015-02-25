@@ -8,8 +8,9 @@
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.VIBRATE" />
-
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
     <uses-feature android:name="android.hardware.camera" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
 
@@ -40,6 +41,10 @@
         <activity
             android:name=".DispatchActivity"
             android:noHistory="true" >
+        </activity>
+        <activity
+            android:name=".Deals"
+            android:label="Deals" >
         </activity>
         <activity
             android:name=".SignUpUser"
@@ -75,7 +80,7 @@
         </activity>
         <activity
             android:name=".SingleFriendView"
-            android:label="@string/title_activity_single_friend_view" >
+            android:label="View Friend" >
         </activity>
 
         <service android:name="com.parse.PushService" />
@@ -98,6 +103,22 @@
             </intent-filter>
         </receiver>
 
+        <activity
+            android:name=".CurrentDealsMoreInfo"
+            android:label="@string/title_activity_current_deals_more_info" >
+        </activity>
+        <activity
+            android:name=".DealsAdapter"
+            android:label="@string/title_activity_deals_adapter" >
+        </activity>
+        <activity
+            android:name=".WantedDealsMoreInfo"
+            android:label="@string/title_activity_wanted_deals_more_info" >
+        </activity>
+        <activity
+            android:name=".WantedDealsAdapter"
+            android:label="@string/title_activity_wanted_deals_adapter" >
+        </activity>
     </application>
 
 </manifest>

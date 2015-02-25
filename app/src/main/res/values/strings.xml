@@ -26,5 +26,9 @@
     <string name="title_activity_friends_more_info">FriendsMoreInfo</string>
     <string name="title_activity_friends_adapter">FriendsAdapter</string>
     <string name="title_activity_single_friend_view">SingleFriendView</string>
+    <string name="title_activity_current_deals_more_info">CurrentDealsMoreInfo</string>
+    <string name="title_activity_deals_adapter">DealsAdapter</string>
+    <string name="title_activity_wanted_deals_more_info">WantedDealsMoreInfo</string>
+    <string name="title_activity_wanted_deals_adapter">WantedDealsAdapter</string>
 
 </resources>

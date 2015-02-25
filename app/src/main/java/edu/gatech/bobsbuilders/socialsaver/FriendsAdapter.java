@@ -9,11 +9,6 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.parse.Parse;
-import com.parse.ParseObject;
-import com.parse.ParseQuery;
-import com.parse.ParseUser;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -89,9 +84,9 @@ public class FriendsAdapter extends BaseAdapter {
             holder = new ViewHolder();
             view = inflater.inflate(R.layout.listview_item, null);
             // Locate the TextViews in listview_item.xml
-            holder.email = (TextView) view.findViewById(R.id.emailtitle);
-            holder.name = (TextView) view.findViewById(R.id.nametitle);
-            holder.rating = (TextView) view.findViewById(R.id.ratingtitle);
+            holder.email = (TextView) view.findViewById(R.id.priceWANTEDTVSET);
+            holder.name = (TextView) view.findViewById(R.id.itemWANTEDTVSET);
+            holder.rating = (TextView) view.findViewById(R.id.foundTVSET);
             holder.reportCount=(TextView)view.findViewById(R.id.reporttitle);
             holder.userimage = (ImageView) view.findViewById(R.id.ivuserprofile);
             view.setTag(holder);

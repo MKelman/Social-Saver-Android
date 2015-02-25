@@ -7,112 +7,179 @@
     tools:context="edu.gatech.bobsbuilders.socialsaver.HomeScreen$PlaceholderFragment"
     android:id="@+id/homeScren">
 
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/dealtyperg"
+        android:checkedButton="@+id/wantedButton"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal"
+        >
+
+    <RadioButton
+        android:id="@+id/wantedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Wanted Deal"
+        android:layout_alignParentTop="true"
+        android:checked="false" />
+
+    <RadioButton
+        android:id="@+id/FoundButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Found Deal"
+        android:checked="false" />
+    </RadioGroup>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Post A Deal"
-        android:id="@+id/PostDealTV"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
-
-    <EditText
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/editText"
-        android:layout_below="@+id/PostDealTV"
-        android:layout_marginTop="35dp"
-        android:text="Item Name"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-
-    <ImageView
-        android:layout_width="200px"
-        android:layout_height="200px"
-        android:id="@+id/imageView"
-        android:layout_below="@+id/editText"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Item: "
+        android:id="@+id/textView6"
+        android:layout_marginTop="31dp"
+        android:layout_below="@+id/dealtyperg"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="36dp"
-        android:src="@drawable/black200"
-        />
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Max Price: $"
+        android:id="@+id/textView7"
+        android:layout_marginTop="24dp"
+        android:layout_below="@+id/textView6"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/onlineorlocalrb"
+        android:checkedButton="@+id/instorebutton"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal"
+        android:layout_marginTop="24dp"
+        android:layout_below="@+id/salesendtv"
+        android:visibility="invisible"
+        android:layout_above="@+id/actuallocationtv">
+
+        <RadioButton
+            android:id="@+id/onlinebutton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Online"
+            android:layout_alignParentTop="true"
+            android:checked="false" />
+
+        <RadioButton
+            android:id="@+id/instorebutton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="In-Store"
+            />
+    </RadioGroup>
 
     <EditText
         android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/itemet"
+        android:layout_toRightOf="@+id/textView6"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_above="@+id/textView7"
+        android:layout_below="@+id/dealtyperg" />
+
+    <EditText
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:inputType="numberDecimal"
         android:ems="10"
-        android:id="@+id/editText2"
-        android:text="Price"
-        android:layout_alignBottom="@+id/imageView"
-        android:layout_alignLeft="@+id/PostDealTV"
-        android:layout_alignStart="@+id/PostDealTV"
-        android:layout_alignRight="@+id/PostDealTV"
-        android:layout_alignEnd="@+id/PostDealTV" />
+        android:id="@+id/maxPrice"
+        android:layout_alignBottom="@+id/textView7"
+        android:layout_toRightOf="@+id/textView7"
+        android:layout_toEndOf="@+id/textView7"
+
+        />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        android:id="@+id/SubmitDeal"
+        android:background="@drawable/custom_button2"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/itemet"
+        android:layout_alignEnd="@+id/itemet"
+        android:layout_marginBottom="63dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="$"
-        android:id="@+id/moneySign"
-        android:layout_alignBottom="@+id/editText2"
-        android:layout_toLeftOf="@+id/editText2"
-        android:layout_toStartOf="@+id/editText2"
-        android:paddingBottom="4px"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Sale End Date:"
+        android:id="@+id/salesendtv"
+        android:layout_marginTop="24dp"
+        android:layout_below="@+id/maxPrice"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:visibility="invisible"
         />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/editText3"
-        android:layout_centerVertical="true"
+        android:inputType="date"
+        android:ems="10"
+        android:id="@+id/salesendet"
+        android:layout_alignBottom="@+id/salesendtv"
+        android:layout_alignRight="@+id/itemet"
+        android:layout_alignEnd="@+id/itemet"
+        android:layout_toRightOf="@+id/salesendtv"
+        android:layout_toEndOf="@+id/salesendtv"
+        android:hint="02/25/2015"
+        android:visibility="invisible"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Found:"
+        android:layout_marginTop="30dp"
+        android:id="@+id/foundtv"
+        android:layout_below="@+id/salesendtv"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:text="Brand"
-        android:layout_alignRight="@+id/editText4"
-        android:layout_alignEnd="@+id/editText4" />
+        android:visibility="invisible"
+
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Location: "
+        android:id="@+id/actuallocationtv"
+        android:layout_marginTop="27dp"
+        android:layout_below="@+id/foundtv"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:visibility="invisible"/>
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/editText4"
-        android:layout_below="@+id/editText3"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:text="Store"
-        android:layout_alignRight="@+id/editText2"
-        android:layout_alignEnd="@+id/editText2" />
+        android:id="@+id/actuallocationet"
+        android:layout_alignBottom="@+id/actuallocationtv"
+        android:layout_toRightOf="@+id/actuallocationtv"
+        android:layout_alignRight="@+id/itemet"
+        android:layout_alignEnd="@+id/itemet"
+        android:inputType="textVisiblePassword"
+        android:visibility="invisible"
+        />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/editText5"
-        android:layout_below="@+id/editText4"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignRight="@+id/editText4"
-        android:layout_alignEnd="@+id/editText4"
-        android:text="Sale End Date" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="New Button"
-        android:id="@+id/button2"
-        android:layout_below="@+id/editText5"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="28dp" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="New Button"
-        android:id="@+id/button3"
-        android:layout_alignTop="@+id/button2"
-        android:layout_toRightOf="@+id/editText5"
-        android:layout_toEndOf="@+id/editText5" />
 
 </RelativeLayout>

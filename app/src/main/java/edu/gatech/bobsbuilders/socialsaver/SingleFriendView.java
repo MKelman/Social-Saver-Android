@@ -1,17 +1,16 @@
 package edu.gatech.bobsbuilders.socialsaver;
 
-import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -25,7 +24,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 
-public class SingleFriendView extends Activity {
+public class SingleFriendView extends ActionBarActivity {
     ProgressDialog mProgressDialog;
     Bitmap bmImg = null;
     String name, email, totalReport, rating, objectId, userimage;
@@ -35,7 +34,6 @@ public class SingleFriendView extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_ACTION_BAR);
         setContentView(R.layout.activity_single_friend_view);
         // Execute loadSingleView AsyncTask
         //getActionBar().setDisplayHomeAsUpEnabled(true); //back button in action bar
@@ -156,6 +154,8 @@ public class SingleFriendView extends Activity {
 
         }
     }
+
+
 
 
 }

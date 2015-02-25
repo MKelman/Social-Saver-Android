@@ -14,13 +14,17 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.Toast;
 
 import com.parse.ParseInstallation;
 import com.parse.ParseUser;
 
 
 public class MainActivity extends ActionBarActivity
-        implements NavigationDrawerFragment.NavigationDrawerCallbacks,HomeScreen.OnHomeScreenSelectedListener,Friends.OnFriendsSelectedListener {
+        implements NavigationDrawerFragment.NavigationDrawerCallbacks,HomeScreen.OnHomeScreenSelectedListener,Friends.OnFriendsSelectedListener,Deals.OnDealsSelectedListener {
 
     /**
      * Fragment managing the behaviors, interactions and presentation of the navigation drawer.
@@ -45,6 +49,8 @@ public class MainActivity extends ActionBarActivity
         mNavigationDrawerFragment.setUp(
                 R.id.navigation_drawer,
                 (DrawerLayout) findViewById(R.id.drawer_layout));
+
+
     }
 
     @Override
@@ -64,7 +70,8 @@ public class MainActivity extends ActionBarActivity
         }
 
         if (position == 2) {
-
+            ft.replace(R.id.container, Fragment.instantiate(MainActivity.this, "edu.gatech.bobsbuilders.socialsaver.Deals"));
+            ft.commit();
         }
 
 
@@ -84,10 +91,10 @@ public class MainActivity extends ActionBarActivity
                 mTitle = getString(R.string.title_section2);
                 break;
             case 3:
-                mTitle =getString(R.string.title_section3);
+                mTitle = getString(R.string.title_section3);
                 break;
             case 4:
-                mTitle =getString(R.string.title_section4);
+                mTitle = getString(R.string.title_section4);
                 break;
             case 5:
                 mTitle =getString(R.string.title_section5);

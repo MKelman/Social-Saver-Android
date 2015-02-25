@@ -65,7 +65,7 @@ public class Friends extends Fragment {
     }
 
     /**
-     * Class Constrcuctor
+     * Class Constrcutor
      *
      */
     public Friends() {
@@ -219,7 +219,6 @@ public class Friends extends Fragment {
     }
     /*
     public interface OnFriendsInteractionListener {
-        // TODO: Update argument type and name
         public void onFragmentInteraction(Uri uri);
     }
     */
