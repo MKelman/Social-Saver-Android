@@ -39,7 +39,6 @@ public class WantedDealsMoreInfo extends ActionBarActivity {
     }
 
 
-
     private class RemoteDataTask extends AsyncTask<Void, Void, Void> {
         @Override
         protected void onPreExecute() {
@@ -65,9 +64,10 @@ public class WantedDealsMoreInfo extends ActionBarActivity {
             try {
 
                 ParseQuery<ParseObject> foundDeals = ParseQuery.getQuery("SeekingDeals");
+                //place constraint here!
 
                 userid = user.getUsername();
-
+                foundDeals.whereEqualTo("userEmail",userid);
 
                 try { // find the user when a student
                     ob = foundDeals.find();

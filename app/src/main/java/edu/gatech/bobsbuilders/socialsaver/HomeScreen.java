@@ -158,9 +158,6 @@ public class HomeScreen extends Fragment  {
                     ParseObject sDeal = new ParseObject("SeekingDeals");
 
                     ParseUser user = ParseUser.getCurrentUser();
-                    sDeal.put("userEmail", ParseUser.getCurrentUser().getUsername());
-                    sDeal.put("item", itemet.getText().toString());
-
 
                     GPSTracker gps = new GPSTracker(getActivity());
                     ParseGeoPoint point;
@@ -178,14 +175,20 @@ public class HomeScreen extends Fragment  {
                     }
 
                     String itemPrice = maxPriceet.getText().toString();
-                    Number price = Double.parseDouble(itemPrice);
-                    sDeal.put("maxPrice", price);
-                    sDeal.put("userLocation", point);
+                    if(itemPrice.equals("") || itemPrice.equals("") || point.equals("") || itemet.getText().toString().equals("")) {
+                        Toast.makeText(getActivity(), "Sorry, not all the fields have been filled in", Toast.LENGTH_LONG).show();
+                    } else {
+                        Number price = Double.parseDouble(itemPrice);
+                        sDeal.put("maxPrice", price);
+                        sDeal.put("userLocation", point);
+                        sDeal.put("userEmail", ParseUser.getCurrentUser().getUsername());
+                        sDeal.put("item", itemet.getText().toString());
 
-                    sDeal.saveInBackground();
-                    Toast.makeText(getActivity(), "Wanted Deal Posted!", Toast.LENGTH_LONG).show();
-                    maxPriceet.setText("");
-                    itemet.setText("");
+                        sDeal.saveInBackground();
+                        Toast.makeText(getActivity(), "Wanted Deal Posted!", Toast.LENGTH_LONG).show();
+                        maxPriceet.setText("");
+                        itemet.setText("");
+                    }
 
 
                 } else {
@@ -193,9 +196,8 @@ public class HomeScreen extends Fragment  {
                     ParseObject sDeal = new ParseObject("FoundDeals");
 
                     ParseUser user = ParseUser.getCurrentUser();
-                    sDeal.put("userEmail", ParseUser.getCurrentUser().getUsername());
-                    sDeal.put("actualLocation", actualet.getText().toString());
-                    sDeal.put("item", itemet.getText().toString());
+
+
                     int location = locationrb.getCheckedRadioButtonId();
                     String locationFound;
                     if(location == R.id.onlinebutton) {
@@ -226,22 +228,28 @@ public class HomeScreen extends Fragment  {
                         endDate = null;
                     }
                    // Calendar cal = Calendar.getInstance();
+                    if(actualet.getText().toString().equals("") || endDate.equals("") || locationFound.equals("") || itemet.getText().toString().equals("") ||  maxPriceet.getText().toString().equals("")) {
+                        Toast.makeText(getActivity(), "Sorry, not all the fields have been filled in", Toast.LENGTH_LONG).show();
+                    } else {
+                        sDeal.put("userEmail", ParseUser.getCurrentUser().getUsername());
+                        sDeal.put("actualLocation", actualet.getText().toString());
+                        sDeal.put("item", itemet.getText().toString());
+                        sDeal.put("saleEndDate", endDate);
+                        sDeal.put("foundLocation", locationFound);
+                        String itemPrice = maxPriceet.getText().toString();
+                        Number price = Double.parseDouble(itemPrice);
+                        sDeal.put("maxPrice", price);
+                        sDeal.put("userLocation", point);
 
-                    sDeal.put("saleEndDate", endDate);
-                    sDeal.put("foundLocation", locationFound);
-                    String itemPrice = maxPriceet.getText().toString();
-                    Number price = Double.parseDouble(itemPrice);
-                    sDeal.put("maxPrice", price);
-                    sDeal.put("userLocation", point);
-
-                    sDeal.saveInBackground();
-                    Toast.makeText(getActivity(), "Found Deal Posted!", Toast.LENGTH_LONG).show();
+                        sDeal.saveInBackground();
+                        Toast.makeText(getActivity(), "Found Deal Posted!", Toast.LENGTH_LONG).show();
 
 
-                    maxPriceet.setText("");
-                    itemet.setText("");
-                    actualet.setText("");
-                    saleEndET.setText("");
+                        maxPriceet.setText("");
+                        itemet.setText("");
+                        actualet.setText("");
+                        saleEndET.setText("");
+                    }
                 }
 
             }

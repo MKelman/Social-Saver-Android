@@ -105,7 +105,7 @@
 
         <activity
             android:name=".CurrentDealsMoreInfo"
-            android:label="@string/title_activity_current_deals_more_info" >
+            android:label="Current Deals" >
         </activity>
         <activity
             android:name=".DealsAdapter"
@@ -113,11 +113,15 @@
         </activity>
         <activity
             android:name=".WantedDealsMoreInfo"
-            android:label="@string/title_activity_wanted_deals_more_info" >
+            android:label="Wanted Deals" >
         </activity>
         <activity
             android:name=".WantedDealsAdapter"
             android:label="@string/title_activity_wanted_deals_adapter" >
+        </activity>
+        <activity
+            android:name=".DealReport"
+            android:label="@string/title_activity_deal_report" >
         </activity>
     </application>
 

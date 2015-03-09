@@ -1,28 +1,54 @@
 package edu.gatech.bobsbuilders.socialsaver;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.EditText;
+import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.parse.LogInCallback;
 import com.parse.ParseException;
+import com.parse.ParseFile;
+import com.parse.ParseGeoPoint;
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
 import com.parse.ParseUser;
 import com.parse.RequestPasswordResetCallback;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 
 
 public class LoginPage extends Activity {
     private EditText username, password;
+    AlertDialog alertDialog;
+    List<ParseObject> ob, ob2, ob3;
+    private List<DealListings> dealListings = null;
+    String objectID, email2, item, found, foundLocation, userid;
+    Date saleEndDate;
+    Number maxPrice;
+    ParseGeoPoint point;
+    ProgressDialog mProgressDialog;
+    ListView listview;
+    DealsAdapter adapter;
+    boolean isFound = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,7 +84,6 @@ public class LoginPage extends Activity {
                         // Call the Parse login method
                         ParseUser.logInInBackground(email, password.getText()
                                 .toString().toLowerCase(Locale.getDefault()), new LogInCallback() {
-
                             @Override
                             public void done(ParseUser user, ParseException e) {
                                 dlg.dismiss();
@@ -66,10 +91,109 @@ public class LoginPage extends Activity {
                                     // Show the error message
                                     Toast.makeText(LoginPage.this, e.getMessage(), Toast.LENGTH_LONG).show();
                                 } else {
-                                    // Start an intent for the dispatch activity
-                                    Intent intent = new Intent(LoginPage.this, DispatchActivity.class);
-                                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-                                    startActivity(intent);
+                                   /*
+                                    *
+                                    * LOOK TO SEE IF ANY OF USERS WANTED DEALS MATCH FOUND DEALS
+                                    *
+                                    * */
+
+                                    ParseQuery<ParseObject> wantedDeals = ParseQuery.getQuery("SeekingDeals");
+                                    ParseQuery<ParseObject> foundDeals = ParseQuery.getQuery("FoundDeals");
+
+                                    String userid = ParseUser.getCurrentUser().getUsername();
+
+                                    wantedDeals.whereEqualTo("userEmail", userid);
+
+
+                                    // Locate the column named "ranknum" in Parse.com and order list by ascending
+                                    wantedDeals.orderByDescending("createdAt");
+                                    foundDeals.orderByDescending("createdAt");
+
+                                    try { // find the user when a student
+                                        ob = foundDeals.find();
+                                    } catch (com.parse.ParseException e1) {
+                                        e1.printStackTrace();
+                                    }
+
+                                    try { // find the user when a tutor
+                                        ob2 = wantedDeals.find();
+                                    } catch (com.parse.ParseException e2) {
+                                        e2.printStackTrace();
+                                    }
+
+
+                                    for (ParseObject Userlist : ob2) { //seeking deals
+                                        String itemName = Userlist.get("item").toString();
+                                        Number priceSeeking = (Number) (Userlist.get("maxPrice"));
+
+                                       // ob = foundDeals.find();
+
+                                        for (ParseObject dealList : ob) { // foundDeals
+                                            String item = dealList.get("item").toString();
+                                            Number priceFound = (Number) (dealList.get("maxPrice"));
+
+                                            if (itemName.toLowerCase().equals(item.toLowerCase())) {
+                                                if (priceSeeking.doubleValue() >= priceFound.doubleValue()) {
+
+                                                    boolean isFriends = false;
+                                                    ParseQuery<ParseObject> Friends = ParseQuery.getQuery("Friends");
+
+                                                    try { // find the user when a student
+                                                        ob3 = Friends.find();
+                                                    } catch (com.parse.ParseException e5) {
+                                                        e5.printStackTrace();
+                                                    }
+
+                                                    for (ParseObject users : ob3) {
+
+                                                        if ((ParseUser.getCurrentUser().getUsername().toString().equals(users.get("friendOne").toString())
+                                                                && (users.get("friendTwo").toString().equals(dealList.get("userEmail").toString())))
+                                                                || (ParseUser.getCurrentUser().getUsername().toString().equals(users.get("friendTwo").toString())
+                                                                && (users.get("friendOne").toString().equals(dealList.get("userEmail").toString())))) {
+                                                            isFound = true;
+                                                        }
+                                                    }
+
+                                                }
+                                            }
+
+                                        }
+                                    }
+
+                                    if (isFound) {
+                                        // Start an intent for the dispatch activity
+                                        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(LoginPage.this);
+                                        alertDialogBuilder.setTitle("Deals Found!");
+                                        alertDialogBuilder
+                                                .setMessage("There are some new deals that match your wanted deals. View them now?")
+                                                .setPositiveButton("View Now", new DialogInterface.OnClickListener() {
+                                                    public void onClick(DialogInterface dialog, int id) {
+                                                        alertDialog.dismiss();
+                                                        Intent intent = new Intent(LoginPage.this, DealReport.class);
+                                                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                                                        startActivity(intent);
+                                                    }
+                                                })
+                                                .setNegativeButton("No Thank You", new DialogInterface.OnClickListener() {
+                                                    public void onClick(DialogInterface dialog, int id) {
+
+                                                        alertDialog.dismiss();
+                                                        Intent intent = new Intent(LoginPage.this, DispatchActivity.class);
+                                                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                                                        startActivity(intent);
+                                                    }
+                                                });
+                                        // create alert dialog
+                                        alertDialog = alertDialogBuilder.create();
+                                        alertDialog.show();
+
+                                    } else {
+                                        // not there, just go to home page
+                                        Intent intent = new Intent(LoginPage.this, DispatchActivity.class);
+                                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                                        startActivity(intent);
+                                    }
+
                                 }
                             }
 
@@ -95,8 +219,7 @@ public class LoginPage extends Activity {
                     if(isEmpty(username)){
                         Toast.makeText(getApplicationContext(),"Please type in your email address used to initally sign up in the email field", Toast.LENGTH_LONG).show();
                     }
-                    else{
-
+                    else {
                         // Set up a progress dialog
                         final ProgressDialog dlg = new ProgressDialog(LoginPage.this);
                         dlg.setTitle("Please wait.");

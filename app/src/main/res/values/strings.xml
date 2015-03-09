@@ -30,5 +30,6 @@
     <string name="title_activity_deals_adapter">DealsAdapter</string>
     <string name="title_activity_wanted_deals_more_info">WantedDealsMoreInfo</string>
     <string name="title_activity_wanted_deals_adapter">WantedDealsAdapter</string>
+    <string name="title_activity_deal_report">DealReport</string>
 
 </resources>
