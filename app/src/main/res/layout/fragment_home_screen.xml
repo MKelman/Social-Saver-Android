@@ -113,7 +113,7 @@
         android:layout_alignParentBottom="true"
         android:layout_alignRight="@+id/itemet"
         android:layout_alignEnd="@+id/itemet"
-        android:layout_marginBottom="63dp" />
+        android:layout_marginBottom="5dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -180,6 +180,8 @@
         android:inputType="textVisiblePassword"
         android:visibility="invisible"
         />
+
+
 
 
 </RelativeLayout>

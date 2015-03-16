@@ -31,5 +31,7 @@
     <string name="title_activity_wanted_deals_more_info">WantedDealsMoreInfo</string>
     <string name="title_activity_wanted_deals_adapter">WantedDealsAdapter</string>
     <string name="title_activity_deal_report">DealReport</string>
+    <string name="title_activity_map_view">MapView</string>
+    <string name="title_activity_map_pin_point">MapPinPoint</string>
 
 </resources>

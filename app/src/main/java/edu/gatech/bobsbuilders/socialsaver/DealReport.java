@@ -81,6 +81,7 @@ public class DealReport extends ActionBarActivity {
                 * Query again from the loginpage
                 * */
 
+                /*GRASP DESIGN PATTERNS EXTRA CREDIT!!*/
                 ParseQuery<ParseObject> wantedDeals = ParseQuery.getQuery("SeekingDeals");
                 ParseQuery<ParseObject> foundDeals = ParseQuery.getQuery("FoundDeals");
 

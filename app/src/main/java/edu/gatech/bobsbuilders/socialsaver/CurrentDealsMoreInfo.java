@@ -89,17 +89,22 @@ public class CurrentDealsMoreInfo extends ActionBarActivity {
                     point = (ParseGeoPoint) dealList.get("userLocation");
                     email = (String) dealList.get("userEmail");
 
-                    DealListings DL = new DealListings();
+                    Date endDate = (Date) dealList.get("saleEndDate");
+                    if(!new Date().after(endDate)) {
+                        // MAKE SURE NOT SHOWING EXPIRED DEALS!
 
-                    DL.setItem(item);
-                    DL.setEmail(email);
-                    DL.setSaleEndDate(saleEndDate);
-                    DL.setObjectID((String) dealList.getObjectId());
-                    DL.setFound(found);
-                    DL.setFoundLocation(foundLocation);
-                    DL.setMaxPrice(maxPrice);
-                    DL.setGeoPoint(point);
-                    dealListings.add(DL);
+                        DealListings DL = new DealListings();
+
+                        DL.setItem(item);
+                        DL.setEmail(email);
+                        DL.setSaleEndDate(saleEndDate);
+                        DL.setObjectID((String) dealList.getObjectId());
+                        DL.setFound(found);
+                        DL.setFoundLocation(foundLocation);
+                        DL.setMaxPrice(maxPrice);
+                        DL.setGeoPoint(point);
+                        dealListings.add(DL);
+                    }
                 }
 
 

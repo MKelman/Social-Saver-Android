@@ -1,7 +1,10 @@
 package edu.gatech.bobsbuilders.socialsaver;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.net.Uri;
@@ -58,7 +61,12 @@ public class HomeScreen extends Fragment  {
     String provider;
     protected String latitude,longitude;
     protected boolean gps_enabled,network_enabled;
-
+    AlertDialog alertDialog;
+    EditText saleEndET;
+    ParseObject sDeal;
+    Date endDate;
+    String locationFound;
+    ParseGeoPoint point;
     /**
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
@@ -116,10 +124,12 @@ public class HomeScreen extends Fragment  {
         final EditText actualet = (EditText) rootView.findViewById(R.id.actuallocationet);
         final TextView actualtv = (TextView) rootView.findViewById(R.id.actuallocationtv);
 
+
         dealrb.setOnCheckedChangeListener(new OnCheckedChangeListener() {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 switch (checkedId) {
                     case R.id.wantedButton:
+
                         salesEndDateET.setVisibility(rootView.INVISIBLE);
                         salesEndDateTV.setVisibility(rootView.INVISIBLE);
                         locationrb.setVisibility(rootView.INVISIBLE);
@@ -129,6 +139,7 @@ public class HomeScreen extends Fragment  {
                         break;
 
                     case R.id.FoundButton:
+
                         salesEndDateET.setVisibility(rootView.VISIBLE);
                         salesEndDateTV.setVisibility(rootView.VISIBLE);
                         locationrb.setVisibility(rootView.VISIBLE);
@@ -155,12 +166,12 @@ public class HomeScreen extends Fragment  {
                 int dealType = dealrb.getCheckedRadioButtonId();
                 if (dealType == R.id.wantedButton) {
                     //database is seekingDeals
-                    ParseObject sDeal = new ParseObject("SeekingDeals");
+                    ParseObject sDeals = new ParseObject("SeekingDeals");
 
                     ParseUser user = ParseUser.getCurrentUser();
 
                     GPSTracker gps = new GPSTracker(getActivity());
-                    ParseGeoPoint point;
+
                     // check if GPS enabled
                     if(gps.canGetLocation()){
                         double latitude = gps.getLatitude();
@@ -179,12 +190,12 @@ public class HomeScreen extends Fragment  {
                         Toast.makeText(getActivity(), "Sorry, not all the fields have been filled in", Toast.LENGTH_LONG).show();
                     } else {
                         Number price = Double.parseDouble(itemPrice);
-                        sDeal.put("maxPrice", price);
-                        sDeal.put("userLocation", point);
-                        sDeal.put("userEmail", ParseUser.getCurrentUser().getUsername());
-                        sDeal.put("item", itemet.getText().toString());
+                        sDeals.put("maxPrice", price);
+                        sDeals.put("userLocation", point);
+                        sDeals.put("userEmail", ParseUser.getCurrentUser().getUsername());
+                        sDeals.put("item", itemet.getText().toString());
 
-                        sDeal.saveInBackground();
+                        sDeals.saveInBackground();
                         Toast.makeText(getActivity(), "Wanted Deal Posted!", Toast.LENGTH_LONG).show();
                         maxPriceet.setText("");
                         itemet.setText("");
@@ -193,13 +204,13 @@ public class HomeScreen extends Fragment  {
 
                 } else {
                     // foundDeal database
-                    ParseObject sDeal = new ParseObject("FoundDeals");
+                    sDeal = new ParseObject("FoundDeals");
 
                     ParseUser user = ParseUser.getCurrentUser();
 
 
                     int location = locationrb.getCheckedRadioButtonId();
-                    String locationFound;
+
                     if(location == R.id.onlinebutton) {
                         locationFound = "Online";
                     } else {
@@ -207,7 +218,7 @@ public class HomeScreen extends Fragment  {
                     }
 
                     GPSTracker gps = new GPSTracker(getActivity());
-                    ParseGeoPoint point;
+                    //ParseGeoPoint point;
                     // check if GPS enabled
                     if(gps.canGetLocation()){
                         double latitude = gps.getLatitude();
@@ -217,10 +228,10 @@ public class HomeScreen extends Fragment  {
                         point = new ParseGeoPoint(0.00, 0.00);
                     }
 
-                    EditText saleEndET = (EditText) rootView.findViewById(R.id.salesendet);
+                    saleEndET = (EditText) rootView.findViewById(R.id.salesendet);
                     DateFormat formatter = new SimpleDateFormat("MM/dd/yyyy");
 
-                    Date endDate;
+
 
                     try {
                         endDate = formatter.parse(saleEndET.getText().toString());
@@ -231,24 +242,79 @@ public class HomeScreen extends Fragment  {
                     if(actualet.getText().toString().equals("") || endDate.equals("") || locationFound.equals("") || itemet.getText().toString().equals("") ||  maxPriceet.getText().toString().equals("")) {
                         Toast.makeText(getActivity(), "Sorry, not all the fields have been filled in", Toast.LENGTH_LONG).show();
                     } else {
-                        sDeal.put("userEmail", ParseUser.getCurrentUser().getUsername());
-                        sDeal.put("actualLocation", actualet.getText().toString());
-                        sDeal.put("item", itemet.getText().toString());
-                        sDeal.put("saleEndDate", endDate);
-                        sDeal.put("foundLocation", locationFound);
-                        String itemPrice = maxPriceet.getText().toString();
-                        Number price = Double.parseDouble(itemPrice);
-                        sDeal.put("maxPrice", price);
-                        sDeal.put("userLocation", point);
 
-                        sDeal.saveInBackground();
-                        Toast.makeText(getActivity(), "Found Deal Posted!", Toast.LENGTH_LONG).show();
+                        if (locationFound.equals("In-Store")) {
+                            // Start an intent for the dispatch activity
+                            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(getActivity());
+                            alertDialogBuilder.setTitle("Deals Found!");
+                            alertDialogBuilder
+                                    .setMessage("Would you like to add your current location as the location of the sale?")
+                                    .setPositiveButton("NO, send me to Google Maps", new DialogInterface.OnClickListener() {
+                                        public void onClick(DialogInterface dialog, int id) {
+                                            alertDialog.dismiss();
+                                            Intent intent = new Intent(getActivity(), MapPinPoint.class);
+                                            //intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+
+                                            intent.putExtra("userEmail", ParseUser.getCurrentUser().getUsername());
+                                            intent.putExtra("actualLocation", actualet.getText().toString());
+                                            intent.putExtra("item", itemet.getText().toString());
+                                            intent.putExtra("saleEndDate", saleEndET.getText().toString());
+                                            intent.putExtra("foundLocation", locationFound);
+                                            String itemPrice = maxPriceet.getText().toString();
+                                            Number price = Double.parseDouble(itemPrice);
+                                            intent.putExtra("maxPrice", price);
+
+                                            startActivity(intent);
+                                        }
+                                    })
+                                    .setNegativeButton("YES", new DialogInterface.OnClickListener() {
+                                        public void onClick(DialogInterface dialog, int id) {
+
+                                            alertDialog.dismiss();
+                                            sDeal.put("userEmail", ParseUser.getCurrentUser().getUsername());
+                                            sDeal.put("actualLocation", actualet.getText().toString());
+                                            sDeal.put("item", itemet.getText().toString());
+                                            sDeal.put("saleEndDate", endDate);
+                                            sDeal.put("foundLocation", locationFound);
+                                            String itemPrice = maxPriceet.getText().toString();
+                                            Number price = Double.parseDouble(itemPrice);
+                                            sDeal.put("maxPrice", price);
+                                            sDeal.put("userLocation", point);
+
+                                            sDeal.saveInBackground();
+                                            Toast.makeText(getActivity(), "Found Deal Posted!", Toast.LENGTH_LONG).show();
 
 
-                        maxPriceet.setText("");
-                        itemet.setText("");
-                        actualet.setText("");
-                        saleEndET.setText("");
+                                            maxPriceet.setText("");
+                                            itemet.setText("");
+                                            actualet.setText("");
+                                            saleEndET.setText("");
+                                        }
+                                    });
+                            // create alert dialog
+                            alertDialog = alertDialogBuilder.create();
+                            alertDialog.show();
+                        } else {
+
+                            sDeal.put("userEmail", ParseUser.getCurrentUser().getUsername());
+                            sDeal.put("actualLocation", actualet.getText().toString());
+                            sDeal.put("item", itemet.getText().toString());
+                            sDeal.put("saleEndDate", endDate);
+                            sDeal.put("foundLocation", locationFound);
+                            String itemPrice = maxPriceet.getText().toString();
+                            Number price = Double.parseDouble(itemPrice);
+                            sDeal.put("maxPrice", price);
+                            sDeal.put("userLocation", point);
+
+                            sDeal.saveInBackground();
+                            Toast.makeText(getActivity(), "Found Deal Posted!", Toast.LENGTH_LONG).show();
+
+
+                            maxPriceet.setText("");
+                            itemet.setText("");
+                            actualet.setText("");
+                            saleEndET.setText("");
+                        }
                     }
                 }
 

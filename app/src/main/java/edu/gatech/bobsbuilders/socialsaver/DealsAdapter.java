@@ -1,6 +1,7 @@
 package edu.gatech.bobsbuilders.socialsaver;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -103,6 +104,30 @@ public class DealsAdapter extends BaseAdapter {
         holder.foundTV.setText(DealListingslist.get(position).getFound());
 
         // Listen for ListView Item Click
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View arg0) {
+                //DEFIANTLY GET OBJECTID SO WE COULD REMOVE THAT FRIENDSHIP ON DELETE BUTTON!
+
+                // Send single item click data to SingleTutorView Class
+                Intent intent = new Intent(context, MapView.class);
+                // Pass all data name
+                ParseGeoPoint point = DealListingslist.get(position).getGeoPoint();
+                String foundAt =  DealListingslist.get(position).getFound();
+                String foundLocation = DealListingslist.get(position).getFoundLocation();
+
+                GetGeoPoint setPoint = new GetGeoPoint();
+                setPoint.SetLat(point.getLatitude());
+                setPoint.SetLong(point.getLongitude());
+                intent.putExtra("LAT", point.getLatitude());
+                intent.putExtra("LONG", point.getLongitude());
+                intent.putExtra("FOUND",foundAt);
+                intent.putExtra("FOUNDLOCATION",foundLocation);
+
+                context.startActivity(intent);
+
+            }
+        });
 
         return view;
     }
