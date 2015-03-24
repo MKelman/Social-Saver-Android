@@ -187,7 +187,7 @@ public class HomeScreen extends Fragment  {
 
                     String itemPrice = maxPriceet.getText().toString();
                     if(itemPrice.equals("") || itemPrice.equals("") || point.equals("") || itemet.getText().toString().equals("")) {
-                        Toast.makeText(getActivity(), "Sorry, not all the fields have been filled in", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getActivity(), "Sorry, not all the fields have been filled in.", Toast.LENGTH_LONG).show();
                     } else {
                         Number price = Double.parseDouble(itemPrice);
                         sDeals.put("maxPrice", price);

@@ -111,7 +111,7 @@ public class MapPinPoint extends FragmentActivity implements OnMapLongClickListe
         dragLat = dragPosition.latitude;
         dragLong = dragPosition.longitude;
         //Log.i("info", "on drag end :" + dragLat + " dragLong :" + dragLong);
-        Toast.makeText(getApplicationContext(), "Marker Dragged..!", Toast.LENGTH_LONG).show();
+        //Toast.makeText(getApplicationContext(), "Marker Dragged..!", Toast.LENGTH_LONG).show();
     }
     @Override
     public void onMarkerDragStart(Marker arg0) {
