@@ -5,7 +5,7 @@ import com.parse.ParseGeoPoint;
 import java.util.Date;
 
 /**
- * Created by Mitchell on 2/25/15.
+ * Created by ${USER} on ${DATE}.
  */
 public interface DealListingsInterface {
 

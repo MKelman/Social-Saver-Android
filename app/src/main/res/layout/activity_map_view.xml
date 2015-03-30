@@ -16,7 +16,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Location not available since the location is online"
+        android:text="@string/locationnotavil_string"
         android:id="@+id/tvonline"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"

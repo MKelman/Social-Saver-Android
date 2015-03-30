@@ -4,18 +4,18 @@
 
     <FrameLayout
         android:id="@+id/container"
-        android:layout_marginBottom="50px"
+        android:layout_marginBottom="15dp"
 
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <ListView
             android:id="@+id/listview"
-            android:layout_marginBottom="50px"
+            android:layout_marginBottom="15dp"
 
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:layout_gravity="left|top">
+            android:layout_gravity="start|top">
         </ListView>
     </FrameLayout>
 
@@ -30,7 +30,7 @@
     <Button
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Home Page"
+        android:text="@string/homepage_string"
         android:id="@+id/toHomePageB"
         android:layout_gravity="center_horizontal|bottom"
         android:background="@drawable/custom_button"

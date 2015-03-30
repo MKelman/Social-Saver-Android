@@ -50,41 +50,14 @@
             android:name=".DispatchActivity"
             android:noHistory="true" >
         </activity>
-        <activity
-            android:name=".Deals"
-            android:label="Deals" >
-        </activity>
+
         <activity
             android:name=".SignUpUser"
             android:label="@string/title_activity_sign_up_user" >
         </activity>
         <activity
-            android:name=".SecondPage"
-            android:label="@string/title_activity_second_page" >
-        </activity>
-        <activity
-            android:name=".Friends"
-            android:label="@string/title_activity_friends" >
-        </activity>
-        <activity
-            android:name=".FindFriends"
-            android:label="@string/title_activity_find_friends" >
-        </activity>
-        <activity
-            android:name=".HomeScreen"
-            android:label="@string/title_activity_home_screen" >
-        </activity>
-        <activity
-            android:name=".FriendsList"
-            android:label="Friends" >
-        </activity>
-        <activity
             android:name=".FriendsMoreInfo"
             android:label="Find Friends" >
-        </activity>
-        <activity
-            android:name=".FriendsAdapter"
-            android:label="@string/title_activity_friends_adapter" >
         </activity>
         <activity
             android:name=".SingleFriendView"
@@ -116,16 +89,8 @@
             android:label="Current Deals" >
         </activity>
         <activity
-            android:name=".DealsAdapter"
-            android:label="@string/title_activity_deals_adapter" >
-        </activity>
-        <activity
             android:name=".WantedDealsMoreInfo"
             android:label="Wanted Deals" >
-        </activity>
-        <activity
-            android:name=".WantedDealsAdapter"
-            android:label="@string/title_activity_wanted_deals_adapter" >
         </activity>
         <activity
             android:name=".DealReport"
@@ -147,6 +112,7 @@
             android:name=".MapPinPoint"
             android:label="@string/title_activity_map_pin_point" >
         </activity>
+
     </application>
 
 </manifest>

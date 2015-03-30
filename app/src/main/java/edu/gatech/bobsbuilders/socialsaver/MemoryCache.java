@@ -14,7 +14,7 @@ public class MemoryCache {
 	private static final String TAG = "MemoryCache";
 
 	// Last argument true for LRU ordering
-	private Map<String, Bitmap> cache = Collections
+	private final Map<String, Bitmap> cache = Collections
 			.synchronizedMap(new LinkedHashMap<String, Bitmap>(10, 1.5f, true));
 
 	// Current allocated size

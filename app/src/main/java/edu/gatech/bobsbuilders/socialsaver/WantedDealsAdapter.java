@@ -1,5 +1,6 @@
 package edu.gatech.bobsbuilders.socialsaver;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,17 +10,13 @@ import android.widget.TextView;
 
 import com.parse.ParseGeoPoint;
 
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 
 public class WantedDealsAdapter extends BaseAdapter {
-    Context context;
-    LayoutInflater inflater;
-    ImageLoader imageLoader;
+    private LayoutInflater inflater;
     private List<DealListings> DealListingslist = null;
-    private ArrayList<DealListings> arraylist;
     String userid,objectid;
     String objectID, email, item, found, foundLocation;
     Date saleEndDate;
@@ -34,16 +31,15 @@ public class WantedDealsAdapter extends BaseAdapter {
      * FriendsAdapter constructor that is overloaded
      *
      * @param context the original class its coming from
-     * @param DealListingsList is the list of listings
-     * @return A new instance of fragment HomeScreen.
+     * @param DealListingslist is the list of listings
      */
     public WantedDealsAdapter(Context context,List<DealListings> DealListingslist) { //this class wanted a void? weird
-        this.context = context;
+        //Context context1 = context;
         this.DealListingslist = DealListingslist;
         inflater = LayoutInflater.from(context);
-        this.arraylist = new ArrayList<DealListings>();
-        this.arraylist.addAll(DealListingslist);
-        imageLoader = new ImageLoader(context);
+        //ArrayList<DealListings> arraylist = new ArrayList<>();
+        //arraylist.addAll(DealListingslist);
+        //ImageLoader imageLoader = new ImageLoader(context);
     }
 
     /**
@@ -78,6 +74,7 @@ public class WantedDealsAdapter extends BaseAdapter {
      * @param parent is the list of listings
      * @return A new view of fragment HomeScreen.
      */
+    @SuppressLint("InflateParams")
     public View getView(final int position, View view, ViewGroup parent) {
 
         final ViewHolder holder;

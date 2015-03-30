@@ -25,10 +25,13 @@ import java.net.URL;
 
 
 public class SingleFriendView extends ActionBarActivity {
-    ProgressDialog mProgressDialog;
-    Bitmap bmImg = null;
-    String name, email, totalReport, rating, objectId, userimage;
-    Boolean dismiss=false;
+    private ProgressDialog mProgressDialog;
+    private Bitmap bmImg = null;
+    private String name;
+    private String email;
+    private String totalReport;
+    private String rating;
+    private String objectId;
 
 
     @Override
@@ -104,7 +107,7 @@ public class SingleFriendView extends ActionBarActivity {
 
                 objectId = i.getStringExtra("OBJECTID");
                 name = i.getStringExtra("NAME");
-                userimage = i.getStringExtra("USERIMAGE");
+                String userimage = i.getStringExtra("USERIMAGE");
                 email = i.getStringExtra("EMAIL");
                 rating = i.getStringExtra("CURRENTRATE");
                 totalReport = i.getStringExtra("TOTALSALES");
@@ -122,10 +125,13 @@ public class SingleFriendView extends ActionBarActivity {
                 e.printStackTrace();
             }
 
-            if(dismiss==true){
+            //Boolean dismiss = false;
+            /*
+            if(dismiss){
                 Intent i=new Intent(SingleFriendView.this,HomeScreen.class);
                 startActivity(i);
             }
+            */
 
             return null;
         }

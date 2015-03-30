@@ -7,12 +7,12 @@ import java.util.Date;
 /**
  * Created by Mitchell on 2/25/15.
  */
-public class FoundDeals {
+class FoundDeals {
 
-    String objectID, email, item, found, foundLocation;
-    Date saleEndDate;
-    Number maxPrice;
-    ParseGeoPoint point;
+    private String objectID, email, item, found, foundLocation;
+    private Date saleEndDate;
+    private Number maxPrice;
+    private ParseGeoPoint point;
 
     public String getObjectID() {
         return objectID;

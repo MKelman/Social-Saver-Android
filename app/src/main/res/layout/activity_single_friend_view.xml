@@ -8,20 +8,21 @@
     android:id="@+id/rlayoutsinglefriend">
 
     <ImageView
-        android:layout_width="225px"
-        android:layout_height="300px"
+        android:layout_width="120dp"
+        android:layout_height="150dp"
         android:id="@+id/personImage"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:background="#000000"
         android:padding="1dp"
+        android:contentDescription="@string/ss_image"
         android:src="@drawable/black200"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Name: "
+        android:text="@string/name_string"
         android:id="@+id/tvnameASFV"
         android:layout_below="@+id/personImage"
         android:layout_marginTop="15dp"
@@ -42,7 +43,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="email: "
+        android:text="@string/email_string"
         android:id="@+id/tvemailASFV"
         android:layout_below="@+id/tvnameASFV"
         android:layout_marginTop="15dp"
@@ -63,7 +64,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Sales Reports:"
+        android:text="@string/salesreport_string"
         android:id="@+id/tvreportcountASFV"
         android:layout_below="@+id/tvemailASFV"
         android:layout_marginTop="15dp"
@@ -84,7 +85,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Rating: "
+        android:text="@string/rating_string"
         android:id="@+id/tvratingASFV"
         android:layout_below="@+id/tvreportcountASFV"
         android:layout_marginTop="15dp"
@@ -104,7 +105,7 @@
     <Button
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Remove Friend"
+        android:text="@string/removefriend_string"
         android:id="@+id/removeFriend"
         android:layout_below="@+id/tvratingASFV"
         android:layout_marginTop="73dp"

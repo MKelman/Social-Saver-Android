@@ -21,7 +21,7 @@ import java.util.Locale;
 
 
 public class SignUpUser extends Activity {
-    EditText name, email, password, passwordverify;
+    private EditText name, email, password, passwordverify;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,7 +68,7 @@ public class SignUpUser extends Activity {
                         /*START Add generic image of user*/
 
                         Drawable drawable = getResources().getDrawable(R.drawable.black200);
-                        Bitmap bitmap = (Bitmap) ((BitmapDrawable) drawable).getBitmap();
+                        Bitmap bitmap = ((BitmapDrawable) drawable).getBitmap();
                         ByteArrayOutputStream stream = new ByteArrayOutputStream();
                         bitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
                         byte[] data = stream.toByteArray();
@@ -119,13 +119,9 @@ public class SignUpUser extends Activity {
     /**
      * Checks field inputted to see if field is empty
      *
-     * @param  Edittext field to check
+     * @param  etText field to check
      */
     private boolean isEmpty(EditText etText) {
-        if (etText.getText().toString().trim().length() > 0) {
-            return false;
-        } else {
-            return true;
-        }
+        return etText.getText().toString().trim().length() <= 0;
     }
 }

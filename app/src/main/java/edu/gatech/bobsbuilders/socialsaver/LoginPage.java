@@ -31,8 +31,8 @@ import java.util.Locale;
 
 public class LoginPage extends Activity {
     private EditText username, password;
-    AlertDialog alertDialog;
-    List<ParseObject> ob, ob2, ob3;
+    private AlertDialog alertDialog;
+    private List<ParseObject> ob, ob2, ob3;
     private List<DealListings> dealListings = null;
     String objectID, email2, item, found, foundLocation, userid;
     Date saleEndDate;
@@ -41,7 +41,7 @@ public class LoginPage extends Activity {
     ProgressDialog mProgressDialog;
     ListView listview;
     DealsAdapter adapter;
-    boolean isFound = false;
+    private boolean isFound = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -128,7 +128,6 @@ public class LoginPage extends Activity {
                                             if (itemName.toLowerCase().equals(item.toLowerCase())) {
                                                 if (priceSeeking.doubleValue() >= priceFound.doubleValue()) {
 
-                                                    boolean isFriends = false;
                                                     ParseQuery<ParseObject> Friends = ParseQuery.getQuery("Friends");
 
                                                     try { // find the user when a student
@@ -139,9 +138,9 @@ public class LoginPage extends Activity {
 
                                                     for (ParseObject users : ob3) {
 
-                                                        if ((ParseUser.getCurrentUser().getUsername().toString().equals(users.get("friendOne").toString())
+                                                        if ((ParseUser.getCurrentUser().getUsername().equals(users.get("friendOne").toString())
                                                                 && (users.get("friendTwo").toString().equals(dealList.get("userEmail").toString())))
-                                                                || (ParseUser.getCurrentUser().getUsername().toString().equals(users.get("friendTwo").toString())
+                                                                || (ParseUser.getCurrentUser().getUsername().equals(users.get("friendTwo").toString())
                                                                 && (users.get("friendOne").toString().equals(dealList.get("userEmail").toString())))) {
                                                             isFound = true;
                                                         }
@@ -246,7 +245,7 @@ public class LoginPage extends Activity {
     /**
      * Checks current network status before attempting to connect with parse
      *
-     * @param  Context of Activity
+     * @param  context of Activity
      */
     public static boolean isNetworkStatusAvialable (Context context) {
         ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -260,16 +259,13 @@ public class LoginPage extends Activity {
         return false;
     }
 
+
     /**
      * Checks field inputted to see if field is empty
      *
-     * @param  Edittext field to check
+     * @param  etText field to check
      */
     private boolean isEmpty(EditText etText) {
-        if (etText.getText().toString().trim().length() > 0) {
-            return false;
-        } else {
-            return true;
-        }
+        return etText.getText().toString().trim().length() <= 0;
     }
 }

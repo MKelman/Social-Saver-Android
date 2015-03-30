@@ -1,5 +1,6 @@
 package edu.gatech.bobsbuilders.socialsaver;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -9,18 +10,20 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.util.ArrayList;
 import java.util.List;
 
 
-public class FriendsAdapter extends BaseAdapter {
-    Context context;
-    LayoutInflater inflater;
+class FriendsAdapter extends BaseAdapter {
+    private Context context;
+    private LayoutInflater inflater;
     float num;
-    ImageLoader imageLoader;
+    private ImageLoader imageLoader;
     private List<UserListings> UserListingslist = null;
-    private ArrayList<UserListings> arraylist;
-    String userid,usermessage,totalrates, currentrate,objectid;
+    private String userid;
+    String usermessage;
+    String totalrates;
+    String currentrate;
+    private String objectid;
     String reportcount, rating;
 
     public FriendsAdapter() {
@@ -31,15 +34,14 @@ public class FriendsAdapter extends BaseAdapter {
      * FriendsAdapter constructor that is overloaded
      *
      * @param context the original class its coming from
-     * @param UserListingsList is the list of listings
-     * @return A new instance of fragment HomeScreen.
+     * @param UserListingslist is the list of listings
      */
     public FriendsAdapter(Context context,List<UserListings> UserListingslist) { //this class wanted a void? weird
         this.context = context;
         this.UserListingslist = UserListingslist;
         inflater = LayoutInflater.from(context);
-        this.arraylist = new ArrayList<UserListings>();
-        this.arraylist.addAll(UserListingslist);
+       // ArrayList<UserListings> arraylist = new ArrayList<>();
+       // arraylist.addAll(UserListingslist);
         imageLoader = new ImageLoader(context);
     }
 
@@ -78,6 +80,7 @@ public class FriendsAdapter extends BaseAdapter {
      * @param parent is the list of listings
      * @return A new view of fragment HomeScreen.
      */
+    @SuppressLint("InflateParams")
     public View getView(final int position, View view, ViewGroup parent) {
         final ViewHolder holder;
         if (view == null) {
@@ -97,7 +100,7 @@ public class FriendsAdapter extends BaseAdapter {
         holder.email.setText(UserListingslist.get(position).getEmail());
         holder.name.setText(UserListingslist.get(position).getName());
         holder.rating.setText(UserListingslist.get(position).getCurrentRate());
-        holder.reportCount.setText(UserListingslist.get(position).getTotalSales().toString());
+        holder.reportCount.setText(UserListingslist.get(position).getTotalSales());
 
         // Set the results into ImageView
         imageLoader.DisplayImage(UserListingslist.get(position).getUserImage(),holder.userimage);

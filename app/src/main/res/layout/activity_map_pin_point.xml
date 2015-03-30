@@ -18,7 +18,7 @@
     <Button
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Submit"
+        android:text="@string/submit_string"
         android:id="@+id/submitDealWithLoc"
         android:background="@drawable/custom_button2"
         android:layout_alignParentBottom="true"

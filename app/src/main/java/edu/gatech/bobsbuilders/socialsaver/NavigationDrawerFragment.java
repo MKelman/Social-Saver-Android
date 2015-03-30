@@ -96,6 +96,7 @@ public class NavigationDrawerFragment extends Fragment {
                 selectItem(position);
             }
         });
+        //noinspection Convert2Diamond
         mDrawerListView.setAdapter(new ArrayAdapter<String>(
                 getActionBar().getThemedContext(),
                 android.R.layout.simple_list_item_activated_1,
@@ -190,7 +191,7 @@ public class NavigationDrawerFragment extends Fragment {
     /**
      * Handle situation based on selected item
      *
-     * @param  position
+     * @param  position value of position
      */
     private void selectItem(int position) {
         mCurrentSelectedPosition = position;

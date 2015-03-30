@@ -21,15 +21,20 @@ import java.util.List;
 
 
 public class FriendsMoreInfo extends ActionBarActivity {
-    List<ParseObject> ob, ob2;
-    List<ParseUser> ob3;
-    ProgressDialog mProgressDialog;
+    private List<ParseObject> ob;
+    private List<ParseObject> ob2;
+    private List<ParseUser> ob3;
+    private ProgressDialog mProgressDialog;
     private List<UserListings> userlistings = null;
-    String userid, name, email,rating, totalsales;
-    ParseFile image;
+    private String userid;
+    private String name;
+    private String email;
+    private String rating;
+    private String totalsales;
+    private ParseFile image;
     View rootView;
-    ListView listview;
-    FriendsAdapter adapter; // was listviewadapter
+    private ListView listview;
+    private FriendsAdapter adapter; // was listviewadapter
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,7 +65,7 @@ public class FriendsMoreInfo extends ActionBarActivity {
         @Override
         protected Void doInBackground(Void... params) {
 
-            userlistings = new ArrayList<UserListings>();
+            userlistings = new ArrayList<>();
 
             ParseUser user = ParseUser.getCurrentUser();
 
@@ -96,7 +101,7 @@ public class FriendsMoreInfo extends ActionBarActivity {
 
                     /*User as Friend One*/
                     ParseQuery<ParseUser> query = ParseUser.getQuery();
-                    query.whereEqualTo("username", (String) Userlist.get("friendTwo"));
+                    query.whereEqualTo("username", Userlist.get("friendTwo"));
                     try {
                         ob3 = query.find();
                         for (ParseObject user2 : ob3) {
@@ -104,7 +109,7 @@ public class FriendsMoreInfo extends ActionBarActivity {
                             image = (ParseFile) user2.get("userImage"); // get tutor photo
                             name = (String) user2.get("name");
                             email = (String) user2.get("username");
-                            rating = (String) user2.get("Rating") + "/5.0";
+                            rating = user2.get("Rating") + "/5.0";
                             totalsales = (String) user2.get("reportCount");
                         }
                     } catch (com.parse.ParseException e) {
@@ -116,7 +121,7 @@ public class FriendsMoreInfo extends ActionBarActivity {
                     UL.setCurrentRate(rating);
                     UL.setEmail(email);
                     UL.setName(name);
-                    UL.setObjectID((String)Userlist.getObjectId());
+                    UL.setObjectID(Userlist.getObjectId());
                     UL.setTotalSales(totalsales);
                     UL.setUserImage(image.getUrl());
                     userlistings.add(UL); // just one
@@ -127,7 +132,7 @@ public class FriendsMoreInfo extends ActionBarActivity {
                 for (ParseObject Userlist : ob2) {
                     // THIS IS ALL WHEN USER IS THE friend two
                     ParseQuery<ParseUser> query = ParseUser.getQuery();
-                    query.whereEqualTo("username", (String) Userlist.get("friendOne"));
+                    query.whereEqualTo("username", Userlist.get("friendOne"));
                     try {
                         ob3 = query.find();
                         for (ParseObject user2 : ob3) {
@@ -135,7 +140,7 @@ public class FriendsMoreInfo extends ActionBarActivity {
                             image = (ParseFile) user2.get("userImage"); // get tutor photo
                             name = (String) user2.get("name");
                             email = (String) user2.get("username");
-                            rating = (String) user2.get("Rating") + "/5.0";;
+                            rating = user2.get("Rating") + "/5.0";
                             totalsales = (String) user2.get("reportCount");
                         }
                     } catch (com.parse.ParseException e) {
@@ -148,7 +153,7 @@ public class FriendsMoreInfo extends ActionBarActivity {
                     UL.setCurrentRate(rating);
                     UL.setEmail(email);
                     UL.setName(name);
-                    UL.setObjectID((String)Userlist.getObjectId());
+                    UL.setObjectID(Userlist.getObjectId());
                     UL.setTotalSales(totalsales);
                     UL.setUserImage(image.getUrl());
                     userlistings.add(UL); // just one

@@ -14,7 +14,6 @@ import android.widget.TextView;
 import com.parse.ParseGeoPoint;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
-import com.parse.ParseUser;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -24,14 +23,9 @@ import java.util.List;
 public class CurrentDealsMoreInfo extends ActionBarActivity {
     private List<DealListings> dealListings = null;
 
-    List<ParseObject> ob;
-    ProgressDialog mProgressDialog;
-    String objectID, email, item, found, foundLocation, userid;
-    Date saleEndDate;
-    Number maxPrice;
-    ParseGeoPoint point;
-    ListView listview;
-    DealsAdapter adapter;
+    private List<ParseObject> ob;
+    private ProgressDialog mProgressDialog;
+    private String objectID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,15 +55,15 @@ public class CurrentDealsMoreInfo extends ActionBarActivity {
         @Override
         protected Void doInBackground(Void... params) {
 
-            dealListings = new ArrayList<DealListings>();
+            dealListings = new ArrayList<>();
 
-            ParseUser user = ParseUser.getCurrentUser();
+            //ParseUser user = ParseUser.getCurrentUser();
 
             try {
 
                 ParseQuery<ParseObject> foundDeals = ParseQuery.getQuery("FoundDeals");
 
-                userid = user.getUsername();
+                //String userid = user.getUsername();
 
 
                 try { // find the user when a student
@@ -81,13 +75,13 @@ public class CurrentDealsMoreInfo extends ActionBarActivity {
 
                 for (ParseObject dealList : ob) {
 
-                    item = (String) dealList.get("item");
-                    saleEndDate = (Date) dealList.get("saleEndDate");
-                    found = (String) dealList.get("actualLocation");
-                    foundLocation = (String) dealList.get("foundLocation");
-                    maxPrice = (Number) dealList.get("maxPrice");
-                    point = (ParseGeoPoint) dealList.get("userLocation");
-                    email = (String) dealList.get("userEmail");
+                    String item = (String) dealList.get("item");
+                    Date saleEndDate = (Date) dealList.get("saleEndDate");
+                    String found = (String) dealList.get("actualLocation");
+                    String foundLocation = (String) dealList.get("foundLocation");
+                    Number maxPrice = (Number) dealList.get("maxPrice");
+                    ParseGeoPoint point = (ParseGeoPoint) dealList.get("userLocation");
+                    String email = (String) dealList.get("userEmail");
 
                     Date endDate = (Date) dealList.get("saleEndDate");
                     if(!new Date().after(endDate)) {
@@ -98,7 +92,7 @@ public class CurrentDealsMoreInfo extends ActionBarActivity {
                         DL.setItem(item);
                         DL.setEmail(email);
                         DL.setSaleEndDate(saleEndDate);
-                        DL.setObjectID((String) dealList.getObjectId());
+                        DL.setObjectID( dealList.getObjectId());
                         DL.setFound(found);
                         DL.setFoundLocation(foundLocation);
                         DL.setMaxPrice(maxPrice);
@@ -126,9 +120,9 @@ public class CurrentDealsMoreInfo extends ActionBarActivity {
             }
 
             // Locate the listview in listview_main.xml
-            listview = (ListView) findViewById(R.id.listview);
+            ListView listview = (ListView) findViewById(R.id.listview);
             // Pass the results into ListViewAdapter.java
-            adapter = new DealsAdapter(CurrentDealsMoreInfo.this,dealListings);
+            DealsAdapter adapter = new DealsAdapter(CurrentDealsMoreInfo.this, dealListings);
             // Binds the Adapter to the ListView
             listview.setAdapter(adapter);
             // Close the progressdialog

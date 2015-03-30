@@ -7,7 +7,7 @@
         android:id="@+id/titlelabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Name: " />
+        android:text="@string/name_string" />
 
     <TextView
         android:id="@+id/itemWANTEDTVSET"
@@ -20,7 +20,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/titlelabel"
-        android:text="Email: " />
+        android:text="@string/email_string" />
 
     <TextView
         android:id="@+id/priceWANTEDTVSET"
@@ -34,7 +34,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/userlabel"
-        android:text="Rating: " />
+        android:text="@string/rating_string" />
 
     <TextView
         android:id="@+id/foundTVSET"
@@ -48,7 +48,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/catagorylabel"
-        android:text="Report Count: " />
+        android:text="@string/reportcount_string" />
 
     <TextView
         android:id="@+id/reporttitle"
@@ -65,6 +65,7 @@
 		android:layout_alignTop="@id/titlelabel"
 		android:layout_alignBottom="@id/pricelabel"
         android:layout_alignParentRight="true"
+        android:contentDescription="@string/ss_image"
         android:padding="5dp" />
 
 </RelativeLayout>

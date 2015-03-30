@@ -1,5 +1,6 @@
 package edu.gatech.bobsbuilders.socialsaver;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
@@ -16,7 +17,6 @@ import com.google.android.gms.maps.GoogleMap.OnMarkerDragListener;
 import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
-import com.google.android.gms.maps.model.MarkerOptions;
 import com.parse.ParseGeoPoint;
 import com.parse.ParseObject;
 
@@ -29,12 +29,14 @@ import java.util.Date;
 public class MapPinPoint extends FragmentActivity implements OnMapLongClickListener,OnMapClickListener,OnMarkerDragListener {
 
     private GoogleMap map;
-    Marker marker;
-    double dragLat, dragLong;
-    ParseObject sDeal;
-    Date endDate;
-    String userEmail,actualLocation,item,saleEndDate,foundLocation;
-    Double maxPrice;
+    private double dragLat, dragLong;
+    private ParseObject sDeal;
+    private Date endDate;
+    private String userEmail;
+    private String actualLocation;
+    private String item;
+    private String foundLocation;
+    private Double maxPrice;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,11 +47,11 @@ public class MapPinPoint extends FragmentActivity implements OnMapLongClickListe
         userEmail = data.getString("userEmail");
         actualLocation = data.getString("actualLocation");
         item = data.getString("item");
-        saleEndDate = data.getString("saleEndDate");
+        String saleEndDate = data.getString("saleEndDate");
         foundLocation = data.getString("foundLocation");
         maxPrice = data.getDouble("maxPrice");
         Button Submit = (Button)findViewById(R.id.submitDealWithLoc);
-        DateFormat formatter = new SimpleDateFormat("MM/dd/yyyy");
+        @SuppressLint("SimpleDateFormat") DateFormat formatter = new SimpleDateFormat("MM/dd/yyyy");
 
         try {
             endDate = formatter.parse(saleEndDate);
@@ -62,7 +64,6 @@ public class MapPinPoint extends FragmentActivity implements OnMapLongClickListe
         map.setOnMapLongClickListener(MapPinPoint.this);
         map.setOnMapClickListener(MapPinPoint.this);
 
-        GetGeoPoint getPoint = new GetGeoPoint();
         GPSTracker gps = new GPSTracker(MapPinPoint.this);
         double latitude = gps.getLatitude();
         double longitude = gps.getLongitude();
@@ -73,10 +74,11 @@ public class MapPinPoint extends FragmentActivity implements OnMapLongClickListe
         map.setMapType(GoogleMap.MAP_TYPE_NORMAL);
         CameraUpdate update = CameraUpdateFactory.newLatLngZoom(LOCATION, 16);
         map.animateCamera(update);
-        marker = map.addMarker(new MarkerOptions()
+        /*
+        Marker marker = map.addMarker(new MarkerOptions()
                 .position(LOCATION)
                 .draggable(true));
-
+        */
         //marker = map.addMarker(new MarkerOptions().position(LOCATION).title("Find me here!"));
         Submit.setOnClickListener(new View.OnClickListener() {
 

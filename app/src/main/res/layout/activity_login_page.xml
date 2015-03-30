@@ -14,6 +14,7 @@
         android:gravity="center_horizontal"
         android:padding="5dp"
         android:src="@drawable/sslogo"
+        android:contentDescription="@string/ss_image"
         android:id="@+id/logo"/>
 
     <EditText
@@ -24,7 +25,7 @@
         android:id="@+id/emailfield"
         android:layout_below="@+id/logo"
         android:layout_marginTop="10dp"
-        android:hint="Email Address"
+        android:hint="@string/email_address_string"
         android:layout_marginLeft="10dp"
         />
 
@@ -35,7 +36,7 @@
         android:ems="10"
         android:id="@+id/passfield"
         android:layout_below="@+id/emailfield"
-        android:hint="Password"
+        android:hint="@string/password_string"
         android:layout_marginLeft="10dp"
         />
 
@@ -43,13 +44,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="Forgot Password?"
+        android:text="@string/forgotpass_string"
         android:id="@+id/forgotpassword"
         android:layout_below="@+id/passfield"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:clickable="true"
-        android:onClick="onClick"
         />
 
     <LinearLayout
@@ -62,24 +62,21 @@
     <Button
         android:layout_width="40dp"
         android:layout_height="wrap_content"
-        android:text="Login"
-        android:id="@+id/login"
-        android:layout_below="@+id/textView2"
+        android:text="@string/register_string"
+        android:id="@+id/newuser"
         android:paddingRight="5dp"
         android:layout_weight="1"
-        android:layout_marginRight="3px"
+        android:layout_marginRight="3dp"
         android:background="@drawable/custom_button"/>
 
     <Button
         android:layout_width="40dp"
         android:layout_height="wrap_content"
-        android:text="Register"
-        android:id="@+id/newuser"
+        android:text="@string/login_string"
+        android:id="@+id/login"
         android:paddingLeft="5dp"
-        android:layout_alignTop="@+id/submitbutton"
-        android:layout_alignRight="@+id/logo"
         android:layout_weight="1"
-        android:layout_marginLeft="3px"
+        android:layout_marginLeft="3dp"
         android:background="@drawable/custom_button2"
         />
     </LinearLayout>

@@ -20,15 +20,14 @@
         android:id="@+id/wantedButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Wanted Deal"
-        android:layout_alignParentTop="true"
+        android:text="@string/wanteddeals_string"
         android:checked="false" />
 
     <RadioButton
         android:id="@+id/FoundButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Found Deal"
+        android:text="@string/founddeal_string"
         android:checked="false" />
     </RadioGroup>
 
@@ -36,7 +35,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Item: "
+        android:text="@string/item_string"
         android:id="@+id/textView6"
         android:layout_marginTop="31dp"
         android:layout_below="@+id/dealtyperg"
@@ -47,7 +46,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Max Price: $"
+        android:text="@string/maxprice_string"
         android:id="@+id/textView7"
         android:layout_marginTop="24dp"
         android:layout_below="@+id/textView6"
@@ -70,15 +69,14 @@
             android:id="@+id/onlinebutton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Online"
-            android:layout_alignParentTop="true"
+            android:text="@string/online_string"
             android:checked="false" />
 
         <RadioButton
             android:id="@+id/instorebutton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="In-Store"
+            android:text="@string/instore_string"
             />
     </RadioGroup>
 
@@ -90,7 +88,8 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_above="@+id/textView7"
-        android:layout_below="@+id/dealtyperg" />
+        android:layout_below="@+id/dealtyperg"
+        android:inputType="text"/>
 
     <EditText
         android:layout_width="100dp"
@@ -107,7 +106,7 @@
     <Button
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Submit"
+        android:text="@string/submit_string"
         android:id="@+id/SubmitDeal"
         android:background="@drawable/custom_button2"
         android:layout_alignParentBottom="true"
@@ -119,7 +118,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Sale End Date:"
+        android:text="@string/saleenddate_string"
         android:id="@+id/salesendtv"
         android:layout_marginTop="24dp"
         android:layout_below="@+id/maxPrice"
@@ -139,7 +138,7 @@
         android:layout_alignEnd="@+id/itemet"
         android:layout_toRightOf="@+id/salesendtv"
         android:layout_toEndOf="@+id/salesendtv"
-        android:hint="02/25/2015"
+        android:hint="@string/dateexample_string"
         android:visibility="invisible"
         />
 
@@ -147,7 +146,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Found:"
+        android:text="@string/found_string"
         android:layout_marginTop="30dp"
         android:id="@+id/foundtv"
         android:layout_below="@+id/salesendtv"
@@ -161,7 +160,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Location: "
+        android:text="@string/location_string"
         android:id="@+id/actuallocationtv"
         android:layout_marginTop="27dp"
         android:layout_below="@+id/foundtv"

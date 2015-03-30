@@ -8,7 +8,7 @@
         android:id="@+id/titlelabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Item: " />
+        android:text="@string/item_string" />
 
     <TextView
         android:id="@+id/itemWANTEDTVSET"
@@ -21,7 +21,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/titlelabel"
-        android:text="Max Price: $" />
+        android:text="@string/maxprice_string" />
 
     <TextView
         android:id="@+id/priceWANTEDTVSET"

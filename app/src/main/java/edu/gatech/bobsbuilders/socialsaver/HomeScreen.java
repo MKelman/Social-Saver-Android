@@ -1,5 +1,6 @@
 package edu.gatech.bobsbuilders.socialsaver;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
@@ -7,7 +8,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.location.LocationListener;
 import android.location.LocationManager;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -15,7 +15,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RadioGroup.OnCheckedChangeListener;
 import android.widget.TextView;
@@ -45,12 +44,9 @@ public class HomeScreen extends Fragment  {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-    OnHomeScreenSelectedListener mCallback;
+    private OnHomeScreenSelectedListener mCallback;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-    RadioGroup dealrb;
+    private RadioGroup dealrb;
     EditText salesEndDateET;
     TextView salesEndDateTV;
     protected LocationManager locationManager;
@@ -61,12 +57,12 @@ public class HomeScreen extends Fragment  {
     String provider;
     protected String latitude,longitude;
     protected boolean gps_enabled,network_enabled;
-    AlertDialog alertDialog;
-    EditText saleEndET;
-    ParseObject sDeal;
-    Date endDate;
-    String locationFound;
-    ParseGeoPoint point;
+    private AlertDialog alertDialog;
+    private EditText saleEndET;
+    private ParseObject sDeal;
+    private Date endDate;
+    private String locationFound;
+    private ParseGeoPoint point;
     /**
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
@@ -92,14 +88,16 @@ public class HomeScreen extends Fragment  {
         // Required empty public constructor
     }
 
+    @SuppressWarnings("EmptyMethod")
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        /*
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+            String mParam1 = getArguments().getString(ARG_PARAM1);
+            String mParam2 = getArguments().getString(ARG_PARAM2);
         }
-
+        */
 
 
     }
@@ -114,8 +112,7 @@ public class HomeScreen extends Fragment  {
         dealrb = (RadioGroup) rootView.findViewById(R.id.dealtyperg);
         final RadioGroup locationrb = (RadioGroup) rootView.findViewById(R.id.onlineorlocalrb);
 
-        RadioButton wantedDeal = (RadioButton) rootView.findViewById(R.id.wantedButton);
-        RadioButton foundDeal = (RadioButton) rootView.findViewById(R.id.FoundButton);
+
         final TextView salesEndDateTV = (TextView) rootView.findViewById(R.id.salesendtv);
         final EditText salesEndDateET = (EditText) rootView.findViewById(R.id.salesendet);
         final EditText itemet = (EditText) rootView.findViewById(R.id.itemet);
@@ -130,22 +127,22 @@ public class HomeScreen extends Fragment  {
                 switch (checkedId) {
                     case R.id.wantedButton:
 
-                        salesEndDateET.setVisibility(rootView.INVISIBLE);
-                        salesEndDateTV.setVisibility(rootView.INVISIBLE);
-                        locationrb.setVisibility(rootView.INVISIBLE);
-                        foundtv.setVisibility(rootView.INVISIBLE);
-                        actualet.setVisibility(rootView.INVISIBLE);
-                        actualtv.setVisibility(rootView.INVISIBLE);
+                        salesEndDateET.setVisibility(View.INVISIBLE);
+                        salesEndDateTV.setVisibility(View.INVISIBLE);
+                        locationrb.setVisibility(View.INVISIBLE);
+                        foundtv.setVisibility(View.INVISIBLE);
+                        actualet.setVisibility(View.INVISIBLE);
+                        actualtv.setVisibility(View.INVISIBLE);
                         break;
 
                     case R.id.FoundButton:
 
-                        salesEndDateET.setVisibility(rootView.VISIBLE);
-                        salesEndDateTV.setVisibility(rootView.VISIBLE);
-                        locationrb.setVisibility(rootView.VISIBLE);
-                        foundtv.setVisibility(rootView.VISIBLE);
-                        actualet.setVisibility(rootView.VISIBLE);
-                        actualtv.setVisibility(rootView.VISIBLE);
+                        salesEndDateET.setVisibility(View.VISIBLE);
+                        salesEndDateTV.setVisibility(View.VISIBLE);
+                        locationrb.setVisibility(View.VISIBLE);
+                        foundtv.setVisibility(View.VISIBLE);
+                        actualet.setVisibility(View.VISIBLE);
+                        actualtv.setVisibility(View.VISIBLE);
                         break;
 
                 }
@@ -159,16 +156,11 @@ public class HomeScreen extends Fragment  {
             public void onClick(View v) {
 
 
-                int selectedId = dealrb.getCheckedRadioButtonId();
-
-                RadioButton radioSexButton = (RadioButton) rootView.findViewById(selectedId);
-
                 int dealType = dealrb.getCheckedRadioButtonId();
                 if (dealType == R.id.wantedButton) {
                     //database is seekingDeals
                     ParseObject sDeals = new ParseObject("SeekingDeals");
 
-                    ParseUser user = ParseUser.getCurrentUser();
 
                     GPSTracker gps = new GPSTracker(getActivity());
 
@@ -186,7 +178,7 @@ public class HomeScreen extends Fragment  {
                     }
 
                     String itemPrice = maxPriceet.getText().toString();
-                    if(itemPrice.equals("") || itemPrice.equals("") || point.equals("") || itemet.getText().toString().equals("")) {
+                    if(itemPrice.equals("") || itemPrice.equals("")  || itemet.getText().toString().equals("")) {
                         Toast.makeText(getActivity(), "Sorry, not all the fields have been filled in.", Toast.LENGTH_LONG).show();
                     } else {
                         Number price = Double.parseDouble(itemPrice);
@@ -205,9 +197,6 @@ public class HomeScreen extends Fragment  {
                 } else {
                     // foundDeal database
                     sDeal = new ParseObject("FoundDeals");
-
-                    ParseUser user = ParseUser.getCurrentUser();
-
 
                     int location = locationrb.getCheckedRadioButtonId();
 
@@ -229,7 +218,7 @@ public class HomeScreen extends Fragment  {
                     }
 
                     saleEndET = (EditText) rootView.findViewById(R.id.salesendet);
-                    DateFormat formatter = new SimpleDateFormat("MM/dd/yyyy");
+                    @SuppressLint("SimpleDateFormat") DateFormat formatter = new SimpleDateFormat("MM/dd/yyyy");
 
 
 
@@ -239,7 +228,7 @@ public class HomeScreen extends Fragment  {
                         endDate = null;
                     }
                    // Calendar cal = Calendar.getInstance();
-                    if(actualet.getText().toString().equals("") || endDate.equals("") || locationFound.equals("") || itemet.getText().toString().equals("") ||  maxPriceet.getText().toString().equals("")) {
+                    if(actualet.getText().toString().equals("") || locationFound.equals("") || itemet.getText().toString().equals("") ||  maxPriceet.getText().toString().equals("")) {
                         Toast.makeText(getActivity(), "Sorry, not all the fields have been filled in", Toast.LENGTH_LONG).show();
                     } else {
 
@@ -325,12 +314,6 @@ public class HomeScreen extends Fragment  {
         return rootView;
     }
 
-    // TODO: Rename method, update argument and hook method into UI event
-    public void onButtonPressed(Uri uri) {
-        if (mCallback != null) {
-            //mCallback.onFragmentInteraction(uri);
-        }
-    }
 
     @Override
     public void onAttach(Activity activity) {

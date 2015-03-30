@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
@@ -14,11 +13,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
-import android.widget.Toast;
-
 import com.parse.ParseInstallation;
 import com.parse.ParseUser;
 
@@ -56,8 +50,6 @@ public class MainActivity extends ActionBarActivity
     @Override
     public void onNavigationDrawerItemSelected(int position) {
         // update the main content by replacing fragments
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        Fragment fragment = null;
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         if (position == 0) {
             ft.replace(R.id.container, Fragment.instantiate(MainActivity.this, "edu.gatech.bobsbuilders.socialsaver.HomeScreen"));
@@ -100,7 +92,6 @@ public class MainActivity extends ActionBarActivity
     /**
      * Restores the action bar after coming back from home screen of phone
      *
-     * @param  None
      */
     public void restoreActionBar() {
         ActionBar actionBar = getSupportActionBar();
@@ -179,7 +170,7 @@ public class MainActivity extends ActionBarActivity
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_main, container, false);
+            @SuppressWarnings("UnnecessaryLocalVariable") View rootView = inflater.inflate(R.layout.fragment_main, container, false);
             return rootView;
         }
 

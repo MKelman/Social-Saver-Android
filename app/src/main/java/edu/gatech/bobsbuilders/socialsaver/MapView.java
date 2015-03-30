@@ -2,6 +2,7 @@ package edu.gatech.bobsbuilders.socialsaver;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 import com.google.android.gms.maps.CameraUpdate;
@@ -14,7 +15,6 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 public class MapView extends Activity {
 
-    private GoogleMap map;
     //private final LatLng LOCATION_SURRREY = new LatLng(49.187500, -122.849000);
 
     @Override
@@ -24,14 +24,12 @@ public class MapView extends Activity {
 
         Bundle data = getIntent().getExtras();
 
-        String found = data.getString("FOUND");
         String foundLoc = data.getString("FOUNDLOCATION");
         TextView tvonline = (TextView)findViewById(R.id.tvonline);
-        map  = ((MapFragment) getFragmentManager().findFragmentById(R.id.map)).getMap();
+        GoogleMap map = ((MapFragment) getFragmentManager().findFragmentById(R.id.map)).getMap();
 
         if (foundLoc.equals("In-Store")) {
-            tvonline.setVisibility(tvonline.INVISIBLE);
-            GetGeoPoint getPoint = new GetGeoPoint();
+            tvonline.setVisibility(View.INVISIBLE);
             double latitude = data.getDouble("LAT");
             double longitude = data.getDouble("LONG");
             LatLng LOCATION = new LatLng(latitude, longitude);
@@ -42,7 +40,7 @@ public class MapView extends Activity {
             map.addMarker(new MarkerOptions().position(LOCATION).title("Find me here!"));
 
         } else {
-            tvonline.setVisibility(tvonline.VISIBLE);
+            tvonline.setVisibility(View.VISIBLE);
         }
 
 

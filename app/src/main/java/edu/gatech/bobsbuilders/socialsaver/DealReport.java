@@ -26,14 +26,19 @@ import java.util.List;
 public class DealReport extends ActionBarActivity {
     private List<DealListings> dealListings = null;
 
-    List<ParseObject> ob,ob2,ob3;
-    ProgressDialog mProgressDialog;
-    String objectID, email, item, found, foundLocation, userid;
-    Date saleEndDate;
-    Number maxPrice;
-    ParseGeoPoint point;
-    ListView listview;
-    DealsAdapter adapter;
+    private List<ParseObject> ob,ob2,ob3;
+    private ProgressDialog mProgressDialog;
+    String objectID;
+    private String email;
+    String item;
+    private String found;
+    private String foundLocation;
+    String userid;
+    private Date saleEndDate;
+    private Number maxPrice;
+    private ParseGeoPoint point;
+    private ListView listview;
+    private DealsAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,9 +77,7 @@ public class DealReport extends ActionBarActivity {
         @Override
         protected Void doInBackground(Void... params) {
 
-            dealListings = new ArrayList<DealListings>();
-
-            ParseUser user = ParseUser.getCurrentUser();
+            dealListings = new ArrayList<>();
 
             try {
                 /*
@@ -105,7 +108,6 @@ public class DealReport extends ActionBarActivity {
                     e2.printStackTrace();
                 }
 
-                boolean isFound = false;
                 for (ParseObject Userlist : ob2) { //seeking deals
                     String itemName = Userlist.get("item").toString().toLowerCase();
                     Number priceSeeking = (Number) (Userlist.get("maxPrice"));
@@ -117,7 +119,6 @@ public class DealReport extends ActionBarActivity {
                         if (itemName.equals(item)) {
                             if (priceSeeking.doubleValue() >= priceFound.doubleValue()) {
 
-                            String userEmail = dealList.get("userEmail").toString();
                             ParseQuery<ParseObject> Friends = ParseQuery.getQuery("Friends");
 
                             boolean isFriends = false;
@@ -130,9 +131,9 @@ public class DealReport extends ActionBarActivity {
 
                                 for (ParseObject users : ob3) {
 
-                                    if ((ParseUser.getCurrentUser().getUsername().toString().equals(users.get("friendOne").toString())
+                                    if ((ParseUser.getCurrentUser().getUsername().equals(users.get("friendOne").toString())
                                             && (users.get("friendTwo").toString().equals(dealList.get("userEmail").toString())))
-                                            || (ParseUser.getCurrentUser().getUsername().toString().equals(users.get("friendTwo").toString())
+                                            || (ParseUser.getCurrentUser().getUsername().equals(users.get("friendTwo").toString())
                                             && (users.get("friendOne").toString().equals(dealList.get("userEmail").toString())))) {
 
                                         //check if current date is before sale end date!
@@ -158,7 +159,7 @@ public class DealReport extends ActionBarActivity {
                                 DL.setItem(item);
                                 DL.setEmail(email);
                                 DL.setSaleEndDate(saleEndDate);
-                                DL.setObjectID((String) dealList.getObjectId());
+                                DL.setObjectID(dealList.getObjectId());
                                 DL.setFound(found);
                                 DL.setFoundLocation(foundLocation);
                                 DL.setMaxPrice(maxPrice);

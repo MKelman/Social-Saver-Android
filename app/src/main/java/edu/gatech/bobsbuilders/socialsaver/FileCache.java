@@ -4,7 +4,7 @@ import android.content.Context;
 
 import java.io.File;
 
-public class FileCache {
+class FileCache {
 
 	private File cacheDir;
 	
@@ -21,13 +21,14 @@ public class FileCache {
 		else
 			cacheDir = context.getCacheDir();
 		if (!cacheDir.exists())
-			cacheDir.mkdirs();
+            //noinspection ResultOfMethodCallIgnored
+            cacheDir.mkdirs();
 	}
 
 	public File getFile(String url) {
 		String filename = String.valueOf(url.hashCode());
 		// String filename = URLEncoder.encode(url);
-		File f = new File(cacheDir, filename);
+		@SuppressWarnings("UnnecessaryLocalVariable") File f = new File(cacheDir, filename);
 		return f;
 
 	}
@@ -37,7 +38,8 @@ public class FileCache {
 		if (files == null)
 			return;
 		for (File f : files)
-			f.delete();
+            //noinspection ResultOfMethodCallIgnored
+            f.delete();
 	}
 
 }

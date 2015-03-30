@@ -4,7 +4,8 @@ package edu.gatech.bobsbuilders.socialsaver;
  * Created by Mitchell on 3/16/15.
  */
 public class GetGeoPoint {
-    Double latitude,longitude;
+    private Double latitude;
+    private Double longitude;
 
     public void SetLat(Double latitude) {
         this.latitude = latitude;

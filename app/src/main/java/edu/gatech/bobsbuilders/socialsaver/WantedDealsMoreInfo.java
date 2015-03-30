@@ -23,13 +23,9 @@ import java.util.List;
 public class WantedDealsMoreInfo extends ActionBarActivity {
     private List<DealListings> dealListings = null;
 
-    List<ParseObject> ob;
-    ProgressDialog mProgressDialog;
-    String objectID, email, item, userid;
-    Number maxPrice;
-    ParseGeoPoint point;
-    ListView listview;
-    WantedDealsAdapter adapter;
+    private List<ParseObject> ob;
+    private ProgressDialog mProgressDialog;
+    private String objectID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +53,7 @@ public class WantedDealsMoreInfo extends ActionBarActivity {
         @Override
         protected Void doInBackground(Void... params) {
 
+            //noinspection Convert2Diamond
             dealListings = new ArrayList<DealListings>();
 
             ParseUser user = ParseUser.getCurrentUser();
@@ -66,28 +63,27 @@ public class WantedDealsMoreInfo extends ActionBarActivity {
                 ParseQuery<ParseObject> foundDeals = ParseQuery.getQuery("SeekingDeals");
                 //place constraint here!
 
-                userid = user.getUsername();
-                foundDeals.whereEqualTo("userEmail",userid);
+                String userid = user.getUsername();
+                foundDeals.whereEqualTo("userEmail", userid);
 
                 try { // find the user when a student
                     ob = foundDeals.find();
                 } catch (com.parse.ParseException e) {
-
                     e.printStackTrace();
                 }
 
                 for (ParseObject dealList : ob) {
 
-                    item = (String) dealList.get("item");
-                    maxPrice = (Number) dealList.get("maxPrice");
-                    point = (ParseGeoPoint) dealList.get("userLocation");
-                    email = (String) dealList.get("userEmail");
+                    String item = (String) dealList.get("item");
+                    Number maxPrice = (Number) dealList.get("maxPrice");
+                    ParseGeoPoint point = (ParseGeoPoint) dealList.get("userLocation");
+                    String email = (String) dealList.get("userEmail");
 
                     DealListings DL = new DealListings();
 
                     DL.setItem(item);
                     DL.setEmail(email);
-                    DL.setObjectID((String) dealList.getObjectId());
+                    DL.setObjectID(dealList.getObjectId());
                     DL.setMaxPrice(maxPrice);
                     DL.setGeoPoint(point);
                     dealListings.add(DL);
@@ -112,9 +108,9 @@ public class WantedDealsMoreInfo extends ActionBarActivity {
             }
 
             // Locate the listview in listview_main.xml
-            listview = (ListView) findViewById(R.id.listview);
+            ListView listview = (ListView) findViewById(R.id.listview);
             // Pass the results into ListViewAdapter.java
-            adapter = new WantedDealsAdapter(WantedDealsMoreInfo.this,dealListings);
+            WantedDealsAdapter adapter = new WantedDealsAdapter(WantedDealsMoreInfo.this, dealListings);
             // Binds the Adapter to the ListView
             listview.setAdapter(adapter);
             // Close the progressdialog

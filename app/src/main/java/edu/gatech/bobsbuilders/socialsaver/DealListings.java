@@ -9,10 +9,10 @@ import java.util.Date;
  */
 public class DealListings implements DealListingsInterface {
 
-    String objectID, email, item, found, foundLocation;
-    Date saleEndDate;
-    Number maxPrice;
-    ParseGeoPoint point;
+    private String objectID, email, item, found, foundLocation;
+    private Date saleEndDate;
+    private Number maxPrice;
+    private ParseGeoPoint point;
 
     public String getObjectID() {
         return objectID;
