@@ -22,56 +22,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e02a793b-eb86-4bdb-b9d5-2a98c5b57d76" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/androidTest/java/edu/gatech/bobsbuilders/socialsaver/LoginPageTest.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/bolts_android_1_1_4.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/androidTest/java/edu/gatech/bobsbuilders/socialsaver/ApplicationTest.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/edu/gatech/bobsbuilders/socialsaver/Application.java" afterPath="$PROJECT_DIR$/app/src/main/java/edu/gatech/bobsbuilders/socialsaver/Application.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/edu/gatech/bobsbuilders/socialsaver/CurrentDealsMoreInfo.java" afterPath="$PROJECT_DIR$/app/src/main/java/edu/gatech/bobsbuilders/socialsaver/CurrentDealsMoreInfo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/edu/gatech/bobsbuilders/socialsaver/DealListings.java" afterPath="$PROJECT_DIR$/app/src/main/java/edu/gatech/bobsbuilders/socialsaver/DealListings.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/edu/gatech/bobsbuilders/socialsaver/DealListingsInterface.java" afterPath="$PROJECT_DIR$/app/src/main/java/edu/gatech/bobsbuilders/socialsaver/DealListingsInterface.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/edu/gatech/bobsbuilders/socialsaver/DealReport.java" afterPath="$PROJECT_DIR$/app/src/main/java/edu/gatech/bobsbuilders/socialsaver/DealReport.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/edu/gatech/bobsbuilders/socialsaver/Deals.java" afterPath="$PROJECT_DIR$/app/src/main/java/edu/gatech/bobsbuilders/socialsaver/Deals.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/edu/gatech/bobsbuilders/socialsaver/DealsAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/edu/gatech/bobsbuilders/socialsaver/DealsAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/edu/gatech/bobsbuilders/socialsaver/FileCache.java" afterPath="$PROJECT_DIR$/app/src/main/java/edu/gatech/bobsbuilders/socialsaver/FileCache.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/edu/gatech/bobsbuilders/socialsaver/FoundDeals.java" afterPath="$PROJECT_DIR$/app/src/main/java/edu/gatech/bobsbuilders/socialsaver/FoundDeals.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/edu/gatech/bobsbuilders/socialsaver/Friends.java" afterPath="$PROJECT_DIR$/app/src/main/java/edu/gatech/bobsbuilders/socialsaver/Friends.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/edu/gatech/bobsbuilders/socialsaver/FriendsAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/edu/gatech/bobsbuilders/socialsaver/FriendsAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/edu/gatech/bobsbuilders/socialsaver/FriendsMoreInfo.java" afterPath="$PROJECT_DIR$/app/src/main/java/edu/gatech/bobsbuilders/socialsaver/FriendsMoreInfo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/edu/gatech/bobsbuilders/socialsaver/GPSTracker.java" afterPath="$PROJECT_DIR$/app/src/main/java/edu/gatech/bobsbuilders/socialsaver/GPSTracker.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/edu/gatech/bobsbuilders/socialsaver/GetGeoPoint.java" afterPath="$PROJECT_DIR$/app/src/main/java/edu/gatech/bobsbuilders/socialsaver/GetGeoPoint.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/edu/gatech/bobsbuilders/socialsaver/HomeScreen.java" afterPath="$PROJECT_DIR$/app/src/main/java/edu/gatech/bobsbuilders/socialsaver/HomeScreen.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/edu/gatech/bobsbuilders/socialsaver/ImageLoader.java" afterPath="$PROJECT_DIR$/app/src/main/java/edu/gatech/bobsbuilders/socialsaver/ImageLoader.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/edu/gatech/bobsbuilders/socialsaver/LoginPage.java" afterPath="$PROJECT_DIR$/app/src/main/java/edu/gatech/bobsbuilders/socialsaver/LoginPage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/edu/gatech/bobsbuilders/socialsaver/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/edu/gatech/bobsbuilders/socialsaver/MainActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/edu/gatech/bobsbuilders/socialsaver/MapPinPoint.java" afterPath="$PROJECT_DIR$/app/src/main/java/edu/gatech/bobsbuilders/socialsaver/MapPinPoint.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/edu/gatech/bobsbuilders/socialsaver/MapView.java" afterPath="$PROJECT_DIR$/app/src/main/java/edu/gatech/bobsbuilders/socialsaver/MapView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/edu/gatech/bobsbuilders/socialsaver/MemoryCache.java" afterPath="$PROJECT_DIR$/app/src/main/java/edu/gatech/bobsbuilders/socialsaver/MemoryCache.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/edu/gatech/bobsbuilders/socialsaver/NavigationDrawerFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/edu/gatech/bobsbuilders/socialsaver/NavigationDrawerFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/edu/gatech/bobsbuilders/socialsaver/SignUpUser.java" afterPath="$PROJECT_DIR$/app/src/main/java/edu/gatech/bobsbuilders/socialsaver/SignUpUser.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/edu/gatech/bobsbuilders/socialsaver/SingleFriendView.java" afterPath="$PROJECT_DIR$/app/src/main/java/edu/gatech/bobsbuilders/socialsaver/SingleFriendView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/edu/gatech/bobsbuilders/socialsaver/Utils.java" afterPath="$PROJECT_DIR$/app/src/main/java/edu/gatech/bobsbuilders/socialsaver/Utils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/edu/gatech/bobsbuilders/socialsaver/WantedDealsAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/edu/gatech/bobsbuilders/socialsaver/WantedDealsAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/edu/gatech/bobsbuilders/socialsaver/WantedDealsMoreInfo.java" afterPath="$PROJECT_DIR$/app/src/main/java/edu/gatech/bobsbuilders/socialsaver/WantedDealsMoreInfo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_deal_report.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_deal_report.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_deals_adapter.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_deals_adapter.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_login_page.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_login_page.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_map_pin_point.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_map_pin_point.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_map_view.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_map_view.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_sign_up_user.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_sign_up_user.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_single_friend_view.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_single_friend_view.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_wanted_deals_adapter.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_wanted_deals_adapter.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.gradle" afterPath="$PROJECT_DIR$/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_deals.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_deals.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_friends.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_friends.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_home_screen.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_home_screen.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_main.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_main.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/listview_item.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/listview_item.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/menu/settings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/menu/settings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/social-saver.iml" afterPath="$PROJECT_DIR$/social-saver.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/androidTest/java/edu/gatech/bobsbuilders/socialsaver/SignUpUserTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/androidTest/java/edu/gatech/bobsbuilders/socialsaver/LoginPageTest.java" afterPath="$PROJECT_DIR$/app/src/androidTest/java/edu/gatech/bobsbuilders/socialsaver/LoginPageTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Social Saver.iws" />
@@ -103,7 +55,7 @@
       <file leaf-file-name="Application.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/gatech/bobsbuilders/socialsaver/Application.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="203" max-vertical-offset="630">
+            <state vertical-scroll-proportion="0.0" vertical-offset="89" max-vertical-offset="630">
               <caret line="29" column="10" selection-start-line="29" selection-start-column="10" selection-end-line="29" selection-end-column="10" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -112,12 +64,38 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="SignUpUser.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/gatech/bobsbuilders/socialsaver/SignUpUser.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1635">
+              <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="LoginPage.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/gatech/bobsbuilders/socialsaver/LoginPage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.269231" vertical-offset="2993" max-vertical-offset="3510">
-              <caret line="269" column="5" selection-start-line="269" selection-start-column="5" selection-end-line="269" selection-end-column="5" />
+            <state vertical-scroll-proportion="-36.923077" vertical-offset="2145" max-vertical-offset="3510">
+              <caret line="250" column="47" selection-start-line="250" selection-start-column="28" selection-end-line="250" selection-end-column="47" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SignUpUserTest.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/androidTest/java/edu/gatech/bobsbuilders/socialsaver/SignUpUserTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="1620">
+              <caret line="35" column="44" selection-start-line="35" selection-start-column="44" selection-end-line="35" selection-end-column="44" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#367#368#0" expanded="true" />
+                <element signature="e#406#407#0" expanded="true" />
+                <element signature="e#931#2407#0" expanded="true" />
+                <element signature="e#2396#2397#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -125,27 +103,14 @@
       <file leaf-file-name="LoginPageTest.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/androidTest/java/edu/gatech/bobsbuilders/socialsaver/LoginPageTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.1922365" vertical-offset="0" max-vertical-offset="840">
-              <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.22181146" vertical-offset="0" max-vertical-offset="870">
+              <caret line="8" column="25" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#629#630#0" expanded="true" />
-                <element signature="e#667#668#0" expanded="true" />
+                <element signature="e#445#446#0" expanded="true" />
+                <element signature="e#483#484#0" expanded="true" />
               </folding>
             </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="activity_login_page.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_login_page.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.481482" vertical-offset="836" max-vertical-offset="1350">
-              <caret line="71" column="4" selection-start-line="71" selection-start-column="4" selection-end-line="71" selection-end-column="4" />
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="android-designer">
-            <state />
           </provider>
         </entry>
       </file>
@@ -1320,7 +1285,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_wanted_deals_more_info.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/anim_rotate.xml" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
@@ -1371,6 +1335,7 @@
         <option value="$PROJECT_DIR$/app/src/main/java/edu/gatech/bobsbuilders/socialsaver/Application.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/edu/gatech/bobsbuilders/socialsaver/LoginPage.java" />
         <option value="$PROJECT_DIR$/app/src/androidTest/java/edu/gatech/bobsbuilders/socialsaver/LoginPageTest.java" />
+        <option value="$PROJECT_DIR$/app/src/androidTest/java/edu/gatech/bobsbuilders/socialsaver/SignUpUserTest.java" />
       </list>
     </option>
   </component>
@@ -1783,7 +1748,7 @@
     <property name="FullScreen" value="false" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="emulator-5554" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="Nexus_5_API_21_x86" />
-    <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/androidTest/java/edu/gatech/bobsbuilders" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/androidTest/java/edu/gatech/bobsbuilders/socialsaver" />
     <property name="DEBUGGABLE_DEVICE" value="Nexus_5_API_21_x86 [emulator-5554]" />
     <property name="DEBUGGABLE_PROCESS" value="edu.gatech.bobsbuilders.socialsaver" />
     <property name="SHOW_ALL_PROCESSES" value="false" />
@@ -1813,7 +1778,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Android Tests.LoginPageTest">
+  <component name="RunManager" selected="Android Tests.SignUpUserTest">
     <configuration default="false" name="LoginPageTest" type="AndroidTestRunConfigurationType" factoryName="Android Tests" temporary="true" nameIsGenerated="true">
       <module name="app" />
       <option name="TESTING_TYPE" value="2" />
@@ -1846,6 +1811,29 @@
       <option name="PACKAGE_NAME" value="edu.gatech.bobsbuilders.socialsaver" />
       <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
       <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
+      <RunnerSettings RunnerId="AndroidDebugRunner" />
+      <ConfigurationWrapper RunnerId="AndroidDebugRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="SignUpUserTest" type="AndroidTestRunConfigurationType" factoryName="Android Tests" temporary="true" nameIsGenerated="true">
+      <module name="app" />
+      <option name="TESTING_TYPE" value="2" />
+      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="CLASS_NAME" value="edu.gatech.bobsbuilders.socialsaver.SignUpUserTest" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="true" />
       <option name="PREFERRED_AVD" value="" />
       <option name="USE_COMMAND_LINE" value="true" />
       <option name="COMMAND_LINE" value="" />
@@ -1992,15 +1980,17 @@
       <ConfigurationWrapper RunnerId="AndroidDebugRunner" />
       <method />
     </configuration>
-    <list size="3">
+    <list size="4">
       <item index="0" class="java.lang.String" itemvalue="Android Application.app" />
       <item index="1" class="java.lang.String" itemvalue="Android Tests.LoginPageTest" />
       <item index="2" class="java.lang.String" itemvalue="Android Tests.Tests in 'edu.gatech.bobsbuilders.socialsaver'" />
+      <item index="3" class="java.lang.String" itemvalue="Android Tests.SignUpUserTest" />
     </list>
     <recent_temporary>
-      <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="Android Tests.LoginPageTest" />
-        <item index="1" class="java.lang.String" itemvalue="Android Tests.Tests in 'edu.gatech.bobsbuilders.socialsaver'" />
+      <list size="3">
+        <item index="0" class="java.lang.String" itemvalue="Android Tests.SignUpUserTest" />
+        <item index="1" class="java.lang.String" itemvalue="Android Tests.LoginPageTest" />
+        <item index="2" class="java.lang.String" itemvalue="Android Tests.Tests in 'edu.gatech.bobsbuilders.socialsaver'" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="Applet" default="true" selected="false">
@@ -2067,7 +2057,11 @@
       <created>1426538483509</created>
       <updated>1426538483509</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="M10 junit testing">
+      <created>1427737483979</created>
+      <updated>1427737483979</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -2105,7 +2099,7 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16595136" sideWeight="0.50087875" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32941177" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26948482" sideWeight="0.32403433" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16595136" sideWeight="0.50087875" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16595136" sideWeight="0.50087875" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32893" sideWeight="0.49785408" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40686923" sideWeight="0.67596567" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20958512" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -2116,7 +2110,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16595136" sideWeight="0.49912128" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36195508" sideWeight="0.76180255" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24834874" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24834874" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Memory Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20475562" sideWeight="0.59084404" order="12" side_tool="true" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -2149,7 +2143,8 @@
     <MESSAGE value="M7- add to Found Deal/Wanted Deal. Implemented ability to view current wanted items and current deals." />
     <MESSAGE value="M8 - simulation" />
     <MESSAGE value="M9 - Android App FINISHED - Maps working" />
-    <option name="LAST_COMMIT_MESSAGE" value="M9 - Android App FINISHED - Maps working" />
+    <MESSAGE value="M10 junit testing" />
+    <option name="LAST_COMMIT_MESSAGE" value="M10 junit testing" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2157,24 +2152,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/gatech/bobsbuilders/socialsaver/Utils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="420">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/gatech/bobsbuilders/socialsaver/WantedDealsMoreInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="248" max-vertical-offset="2280">
-          <caret line="27" column="28" selection-start-line="27" selection-start-column="28" selection-end-line="27" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/gatech/bobsbuilders/socialsaver/MapPinPoint.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="983" max-vertical-offset="2040">
@@ -2334,17 +2311,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.15228426" vertical-offset="0" max-vertical-offset="394">
           <caret line="4" column="1" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_sign_up_user.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.037037" vertical-offset="1397" max-vertical-offset="1875">
-          <caret line="113" column="43" selection-start-line="113" selection-start-column="43" selection-end-line="113" selection-end-column="43" />
           <folding />
         </state>
       </provider>
@@ -2515,16 +2481,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/gatech/bobsbuilders/socialsaver/Application.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="203" max-vertical-offset="630">
-          <caret line="29" column="10" selection-start-line="29" selection-start-column="10" selection-end-line="29" selection-end-column="10" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_map_view.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-11.111111" vertical-offset="0" max-vertical-offset="465">
@@ -2597,6 +2553,35 @@
         </state>
       </provider>
     </entry>
+    <entry file="file:///Applications/adt-bundle-mac-x86_64-20140702/sdk/sources/android-21/android/test/AndroidTestRunner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33271718" vertical-offset="2025" max-vertical-offset="3240">
+          <caret line="190" column="0" selection-start-line="190" selection-start-column="0" selection-end-line="190" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/gatech/bobsbuilders/socialsaver/Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="203" max-vertical-offset="630">
+          <caret line="29" column="10" selection-start-line="29" selection-start-column="10" selection-end-line="29" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_sign_up_user.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33268481" vertical-offset="1014" max-vertical-offset="1875">
+          <caret line="79" column="4" selection-start-line="79" selection-start-column="4" selection-end-line="79" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_login_page.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-8.481482" vertical-offset="836" max-vertical-offset="1350">
@@ -2608,30 +2593,44 @@
         <state />
       </provider>
     </entry>
-    <entry file="file:///Applications/adt-bundle-mac-x86_64-20140702/sdk/sources/android-21/android/test/AndroidTestRunner.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/gatech/bobsbuilders/socialsaver/SignUpUser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33271718" vertical-offset="2025" max-vertical-offset="3240">
-          <caret line="190" column="0" selection-start-line="190" selection-start-column="0" selection-end-line="190" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1635">
+          <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/gatech/bobsbuilders/socialsaver/LoginPage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.269231" vertical-offset="2993" max-vertical-offset="3510">
-          <caret line="269" column="5" selection-start-line="269" selection-start-column="5" selection-end-line="269" selection-end-column="5" />
+        <state vertical-scroll-proportion="-36.923077" vertical-offset="2145" max-vertical-offset="3510">
+          <caret line="250" column="47" selection-start-line="250" selection-start-column="28" selection-end-line="250" selection-end-column="47" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/androidTest/java/edu/gatech/bobsbuilders/socialsaver/SignUpUserTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="1620">
+          <caret line="35" column="44" selection-start-line="35" selection-start-column="44" selection-end-line="35" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#367#368#0" expanded="true" />
+            <element signature="e#406#407#0" expanded="true" />
+            <element signature="e#931#2407#0" expanded="true" />
+            <element signature="e#2396#2397#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/androidTest/java/edu/gatech/bobsbuilders/socialsaver/LoginPageTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.1922365" vertical-offset="0" max-vertical-offset="840">
-          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.22181146" vertical-offset="0" max-vertical-offset="870">
+          <caret line="8" column="25" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#629#630#0" expanded="true" />
-            <element signature="e#667#668#0" expanded="true" />
+            <element signature="e#445#446#0" expanded="true" />
+            <element signature="e#483#484#0" expanded="true" />
           </folding>
         </state>
       </provider>

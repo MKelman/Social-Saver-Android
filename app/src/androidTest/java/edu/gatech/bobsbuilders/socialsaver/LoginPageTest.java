@@ -3,19 +3,16 @@ package edu.gatech.bobsbuilders.socialsaver;
 import android.content.Context;
 import android.test.ActivityInstrumentationTestCase2;
 import android.test.TouchUtils;
+import android.test.mock.MockContext;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
-
+/*
+* Author: Mitchell Kelman
+*
+* */
 public class LoginPageTest extends ActivityInstrumentationTestCase2<LoginPage> {
 
-    private EditText nameField, passField;
-    //private LoginPage loginPage;
     private LoginPage myActivity;
     private Button loginButton;
-    private TextView theText;
-    private final String expectedInfoText = "Login";
-    private EditText inputText;
 
 
     public LoginPageTest() {
@@ -29,9 +26,7 @@ public class LoginPageTest extends ActivityInstrumentationTestCase2<LoginPage> {
         setActivityInitialTouchMode(true);
 
         myActivity = getActivity();
-        nameField = (EditText) myActivity.findViewById(R.id.emailfield);
         loginButton = (Button) myActivity.findViewById(R.id.login);
-        passField = (EditText) myActivity.findViewById(R.id.passfield);
 
 
     }
@@ -41,9 +36,16 @@ public class LoginPageTest extends ActivityInstrumentationTestCase2<LoginPage> {
         TouchUtils.clickView(this, loginButton);
         LoginPage ma = new LoginPage();
         Context context = myActivity;
+
+        MockContext mockcontext = new MockContext();
         assertEquals(true,ma.isNetworkStatusAvialable(context));
-       // assertTrue(View.VISIBLE == theText.getVisibility());
-       // assertEquals(expectedInfoText, theText.getText());
+
+        Exception a = new UnsupportedOperationException();
+        try {
+            ma.isNetworkStatusAvialable(mockcontext);
+        } catch (Exception e) {
+            assertEquals(e.toString(),a.toString());
+        }
 
     }
 
