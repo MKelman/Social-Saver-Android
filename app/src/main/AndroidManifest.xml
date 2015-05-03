@@ -50,7 +50,6 @@
             android:name=".DispatchActivity"
             android:noHistory="true" >
         </activity>
-
         <activity
             android:name=".SignUpUser"
             android:label="@string/title_activity_sign_up_user" >
@@ -112,7 +111,10 @@
             android:name=".MapPinPoint"
             android:label="@string/title_activity_map_pin_point" >
         </activity>
-
+        <activity
+            android:name=".HScreen"
+            android:label="@string/title_activity_hscreen" >
+        </activity>
     </application>
 
 </manifest>

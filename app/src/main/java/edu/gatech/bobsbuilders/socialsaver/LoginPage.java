@@ -46,8 +46,9 @@ public class LoginPage extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-       // setContentView(R.layout.activity_login_page);
-
+        setContentView(R.layout.activity_login_page);
+        username = (EditText) findViewById(R.id.emailfield);
+        password = (EditText) findViewById(R.id.passfield);
 
         ParseUser currentUser = ParseUser.getCurrentUser();
         if (currentUser != null) {
@@ -60,8 +61,7 @@ public class LoginPage extends Activity {
             this.requestWindowFeature(Window.FEATURE_NO_TITLE);
             setContentView(R.layout.activity_login_page);
 
-            username = (EditText) findViewById(R.id.emailfield);
-            password = (EditText) findViewById(R.id.passfield);
+
 
             findViewById(R.id.login).setOnClickListener(new View.OnClickListener() {
                 public void onClick(View view) {
